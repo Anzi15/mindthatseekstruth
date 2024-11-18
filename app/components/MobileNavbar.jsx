@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import Link  from "next/link"; // Use Link correctly
 import Image from "next/image"; // Correctly import Image
+import SearchBar from "./SearchBar";
+import MobileNavSearchBar from "./MobileNavSearchBar";
 
 function MobileNavbar({ links, isMobileOpen, onClick }) {
   return (
@@ -8,18 +10,11 @@ function MobileNavbar({ links, isMobileOpen, onClick }) {
       className={clsx(
         isMobileOpen && "translate-x-0",
         !isMobileOpen && "-translate-x-full",
-        "w-[359px] h-[812px] bg-white pl-8 pr-4 pt-8 pb-4 absolute top-0 left-0 flex flex-col gap-6 transition-transform duration-[400ms] ease-linear z-50"
+        "w-[359px] h-[812px] bg-white pl-8 pr-4 pt-8 pb-4 top-0 left-0 flex flex-col gap-6 transition-transform duration-[400ms] ease-linear z-50 fixed "
       )}
     >
       <header className="flex items-center justify-between">
-        <Image
-          src="/logo.svg"
-          alt="Al Zehra Perfumes"
-          width={60}
-          height={60}
-          draggable={false}
-          className="select-none "
-        />
+        <div></div>
         <button
           className="h-5 aspect-square cursor-pointer text-neutral-600 focus:rounded focus:outline-none focus:ring-4 focus:ring-indigo-600/[.12]"
           onClick={onClick}
@@ -33,7 +28,8 @@ function MobileNavbar({ links, isMobileOpen, onClick }) {
           </svg>
         </button>
       </header>
-      <div className="flex flex-col gap-4 py-6 justify-start">
+      <MobileNavSearchBar/>
+      <div className="flex flex-col gap-4 py-6 justify-start items-center">
         {links.map((link) => {
           return (
             <Link key={link.id} className="flex justify-start text-lg" href={link.href} onClick={onClick}>

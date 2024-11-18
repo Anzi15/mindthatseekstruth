@@ -36,7 +36,7 @@ export default function Header({children}) {
   return (
     <>
     {children}
-    <header className="max-w-[1440px] mx-auto pt-7 pb-3 flex items-center gap-[103px] h-[84px] min-[1440px]:h-fit px-4 md:px-8 min-[1440px]:px-28 my-4 justice">
+    <header className="max-w-[1440px] mx-auto pt-7 pb-3 flex items-center gap-[103px] h-[84px] min-[1440px]:h-fit px-4 md:px-8 min-[1440px]:px-28 my-4 justice ">
       <Link href={"/"}>
     <Image
         src="/logo.png"
@@ -50,6 +50,7 @@ export default function Header({children}) {
         </Link>
       <Navbar links={links} />
       <div className="flex justify-center items-center gap-4 ml-auto">
+      <SearchBar type="meow" />
         <CartButton />
         <HamburgerButton onClick={() => setIsMobileOpen(!isMobileOpen)} />
       </div>

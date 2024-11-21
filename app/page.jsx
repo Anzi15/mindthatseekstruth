@@ -1,15 +1,15 @@
 import Image from "next/image";
 import HeroSection from "./sections/HeroSection";
 import HelpSeekerSection from "./sections/HelpSeekerSection";
-import VIPPackageSection from "./sections/VIPPackageSection";
+import MindsetBookSection from "./sections/Mindset-book";
 
 export default function Home() {
   return (
     <div>
       <main>
-      <HeroSection />
-      <HelpSeekerSection />
-      <VIPPackageSection />
+        <HeroSection />
+        <HelpSeekerSection />
+        <MindsetBookSection />
       </main>
     </div>
   );

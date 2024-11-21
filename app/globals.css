@@ -79,8 +79,6 @@ h1 {
 	text-align: center;
 }
 
-.cta-btn{
-  background: #006989;
-  color: white;
-  font-weight: 800;
+.cursor-brain{
+  cursor: url('https://i.ibb.co/dPvww3c/brain-1f9e0.png'), auto;
 }

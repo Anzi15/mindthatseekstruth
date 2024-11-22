@@ -3,7 +3,7 @@ import React from 'react'
 
 const HelpSeekerSection = () => {
   return (
-    <section className="w-screen py-4">
+    <section className="w-screen py-4 my-8">
       <div className="text-center p-4">
         <h2 className="md:text-3xl text-2xl font-bold uppercase">Dealing with the pains of <span className="cool-underline-blue text-red-600 font-extrabold">Break up</span>?</h2>
         <h3 className="md:text-2xl text-gray-600">You're not alone, we are here to help you out.</h3>

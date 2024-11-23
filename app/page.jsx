@@ -3,6 +3,7 @@ import HeroSection from "./sections/HeroSection";
 import HelpSeekerSection from "./sections/HelpSeekerSection";
 import MindsetBookSection from "./sections/Mindset-book";
 import LetsTalkSection from "./sections/LetsTalkSection";
+import BookSection from "./sections/BookSection";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         <HelpSeekerSection />
         <MindsetBookSection />
         <LetsTalkSection/>
+        <BookSection/>
       </main>
     </div>
   );

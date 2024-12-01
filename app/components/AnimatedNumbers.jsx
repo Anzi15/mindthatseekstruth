@@ -1,25 +1,25 @@
-"use client"
-import React from "react";
+"use client";
 
+import React, { useState } from "react";
 import AnimatedNumbers from "react-animated-numbers";
 
-function AnimateNumbers({className, number}) {
-  const [num, setNum] = React.useState(number);
+function AnimateNumbers({ className, number }) {
+  const [num, setNum] = useState(number);
+
   return (
-    <div className="container">
-      <AnimatedNumbers
-        className={className}
-        includeComma
-        transitions={(index) => ({
-          type: "spring",
-          duration: index + 0.3,
-        })}
-        animateToNumber={8500}
-        fontStyle={{
-          fontSize: 40,
-          color: "red",
-        }}
-      />
+    <div className="container text-center">
+      <div className={className} style={{ display: "inline-flex", alignItems: "center" }}>
+        <AnimatedNumbers
+          includeComma
+          transitions={(index) => ({
+            type: "spring",
+            duration: index + 0.3,
+          })}
+          animateToNumber={num}
+        />
+        {/* Add the "+" sign after the animated number */}
+        <span style={{ marginLeft: "4px" }}>+</span>
+      </div>
     </div>
   );
 }

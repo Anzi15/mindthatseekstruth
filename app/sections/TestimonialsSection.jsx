@@ -64,7 +64,7 @@ export default function TestimonialsSection({ testimonials = [
   return (
     <>
       <section className="w-full max-w-[98vw] py-4 cursor-grab md:my-20 items-center mt-8 ">
-      <h2 className="md:text-4xl text-2xl font-bold uppercase my-4 text-center">Our Clients<strong className="before:bg-red-400"> love </strong>‎ us</h2>
+      <h2 className="md:text-4xl text-2xl font-bold uppercase my-4 text-center">Our Clients<strong className="before:bg-pink-500"> love </strong>‎ us</h2>
         <div className="mx-auto lg:max-w-6xl px-3  ">
           <Carousel
             opts={{
@@ -90,12 +90,11 @@ export default function TestimonialsSection({ testimonials = [
                         
                       </span>
                       <div>
-                        <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
+                        <h3 className="text-lg font-semibold text-gray-800 dark:text-white flex items-center">
                           {testimonial.author} ‎
                           <span className="text-gray-500 text-sm">
-                            <br />
                             
-                              from {testimonial.location}
+                              | {testimonial.location}
                             </span>
                         </h3>
                       </div>

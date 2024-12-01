@@ -11,24 +11,22 @@ const FAQs = () => {
     <section className="py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col justify-center items-center gap-x-16 gap-y-5 xl:gap-28 lg:flex-row lg:justify-between max-lg:max-w-2xl mx-auto max-w-full">
-          <div className="w-full lg:w-1/3">
+          <div className="w-full lg:w-1/">
             <img
-              src="https://firebasestorage.googleapis.com/v0/b/al-zehra.appspot.com/o/images%2Fpavlo-t-MfGoZ-QoJFc-unsplash.jpg?alt=media&token=ed302f67-c79d-43e8-a63e-9b5bcfa582f9"
+              src="https://i.ibb.co/Bfnpmnh/mateusz-bajdak-cxixrc-U1-HAg-unsplash-1.jpg"
               alt="FAQ tailwind section"
               draggable={false}
             onContextMenu={(e)=>{e.preventDefault()}}
               className="skeleton-loading max-h-[80vw] aspect-[9/16] w-full rounded-xl select-none object-cover"
             />
           </div>
-          <div className="w-full lg:w-1/2">
+          <div className="w-full">
             <div className="lg:max-w-xl">
               <div className="mb-6 lg:mb-16">
-                <h6 className="text-lg text-center font-medium text-brandRed mb-2 lg:text-left">
+                <h6 className="text-lg text-center font-medium text-brandRed mb-2 lg:text-left text-gray-600">
                   FAQs
                 </h6>
-                <h2 className="text-4xl text-center font-bold text-gray-900 leading-[3.25rem] mb-5 lg:text-left">
-                  Looking for answers?
-                </h2>
+                <h2 className="md:text-4xl text-2xl font-bold uppercase  text-left">Looking for<strong className="before:bg-yellow-300"> Answers </strong>‎?</h2>
               </div>
               <div className="accordion-group text-left">
                 {[
@@ -38,11 +36,11 @@ const FAQs = () => {
   },
   {
     "question": "Who is Mehran Dadbeh?",
-    "answer": "Mehran Dadbeh is the author and creator behind Mind That Seeks Truth. He provides consultations, books, and support packages aimed at helping individuals understand and overcome their emotional struggles."
+    "answer": "Mehran Dadbeh is the author and creator behind Mind That Seeks Truth. He provides consultations and books aimed at helping individuals understand and overcome their emotional struggles."
   },
   {
     "question": "What services does Mind That Seeks Truth offer?",
-    "answer": "Mind That Seeks Truth offers various services including Skype consultations, support packages like 'The Ultimate Break Up Cure,' and books such as 'Me, My Psyche & I,' 'Transient Thoughts And Me,' and 'The Break-Up Pain Handbook.'"
+    "answer": "Mind That Seeks Truth offers various services including Skype consultations and books such as 'Me, My Psyche & I,' 'Transient Thoughts And Me,' and 'The Break-Up Pain Handbook.'"
   },
   {
     "question": "How can I contact Mehran Dadbeh for a consultation?",
@@ -51,10 +49,6 @@ const FAQs = () => {
   {
     "question": "Are there any books available for purchase?",
     "answer": "Yes, Mind That Seeks Truth offers several books for purchase, both in paper and e-book formats. Some popular titles include 'Me, My Psyche & I,' 'Transient Thoughts And Me,' and 'The Break-Up Pain Handbook.'"
-  },
-  {
-    "question": "What is the cost of the support packages?",
-    "answer": "The cost of support packages varies. For example, 'The Ultimate Break Up Cure & VIP Support Package' is priced at $198.00, which includes detailed, analytical, and in-depth discussions to help individuals move on from emotional pain."
   },
   {
     "question": "Can I ask questions directly to Mehran Dadbeh without booking a consultation?",
@@ -71,11 +65,11 @@ const FAQs = () => {
                     className={`accordion py-8 border-b border-solid border-gray-200 ${activeAccordion === index ? 'active' : ''}`}
                   >
                     <button
-                      className="accordion-toggle group inline-flex items-center justify-between md:text-xl text-lg font-normal leading-8 text-gray-600 w-full transition duration-500 hover:text-brandRed accordion-active:text-indigo-600 accordion-active:font-medium focus-within::text-brandRed"
+                      className="accordion-toggle group inline-flex items-center justify-between md:text-xl text-lg font-normal leading-8  w-full transition duration-500 hover:text-brandRed accordion-active:text-indigo-600 accordion-active:font-medium focus-within::text-brandRed"
                       onClick={() => toggleAccordion(index)}
                       aria-controls={`accordion-content-${index}`}
                     >
-                      <h5>{item.question}</h5>
+                      <h5 className="text-left text-gray-800">{item.question}</h5>
                       <svg
                         className={`text-gray-900 transition duration-500 group-hover:text-brandRed accordion-active:text-indigo-600 ${activeAccordion === index ? 'rotate-180' : ''}`}
                         width="22"
@@ -95,7 +89,7 @@ const FAQs = () => {
                     </button>
                     <div
                       id={`accordion-content-${index}`}
-                      className={`accordion-content w-full px-0 overflow-hidden pr-4 ${activeAccordion === index ? 'max-h-40' : 'max-h-0'}`}
+                      className={`accordion-content w-full px-0 text-gray-600 overflow-hidden text-left pr-4 ${activeAccordion === index ? 'max-h-40' : 'max-h-0'}`}
                       aria-labelledby={`accordion-heading-${index}`}
                     >
                       <p className="text-base text-gray-500 font-normal">{item.answer}</p>

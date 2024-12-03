@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Me, My Psyche & I",
+    "image_url": "https://i.ibb.co/PWLQMTD/3-1.png",
+    "description": "This book explores the content of our consciousness, the thoughts that occupy our minds, and how to manage them. It delves into understanding why we think the way we do and how to handle feelings of inadequacy and regain confidence.",
+    "hardCopyPrice": 80,
+    "hardCopyComparePrice": 105,
+    "pdfPrice": 7.99,
+    "pdfComparePrice": 26.99,
+    "slug": "me-my-psyche-and-i"
+  },
+  {
+    "title": "Transient Thoughts And Me",
+    "image_url": "https://i.ibb.co/RjGjCwd/1-1.png",
+    "description": "This book addresses the uninvited thoughts that often occupy our minds, questioning everything we do, think, like, or are. It provides insights on how to manage these thoughts and understand their impact on our lives.",
+    "hardCopyPrice": 80,
+    "hardCopyComparePrice": 100,
+    "pdfPrice": 6.99,
+    "pdfComparePrice": 19.99,
+    "slug": "transient-thoughts-and-me"
+  },
+  {
+    "title": "The Break-Up Pain Handbook",
+    "image_url": "https://i.ibb.co/6Xmrn8C/2-1.png",
+    "description": "This book offers guidance on how to handle the emotional pain of a breakup, providing strategies to clear the mind, understand feelings, and move on with detailed, analytical discussions.",
+    "hardCopyPrice": 105,
+    "hardCopyComparePrice": 125,
+    "pdfPrice": 8.99,
+    "pdfComparePrice": 36.99,
+    "slug": "the-break-up-pain-handbook"
+  },
+  {
+    "title": "The MindSet",
+    "image_url": "https://i.ibb.co/mzP4ytj/4-1.png",
+    "description": "This PDF file in print is part of the Ultimate Cure Package. It is designed to help individuals develop the right mindset to overcome emotional struggles and move forward with hope and energy.",
+    "hardCopyPrice": 95,
+    "hardCopyComparePrice": 110,
+    "pdfPrice": 9.99,
+    "pdfComparePrice": 39.99,
+    "slug": "the-mindset"
+  }
+]

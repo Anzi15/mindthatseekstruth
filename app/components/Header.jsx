@@ -17,7 +17,7 @@ const links = [
   {
     id: 2,
     name: "Shop all",
-    href: "/products",
+    href: "/shop",
   },
   {
     id: 3,

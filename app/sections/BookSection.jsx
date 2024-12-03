@@ -1,7 +1,6 @@
 "use client"
 import { Section } from 'lucide-react'
 import React from 'react'
-import BookCard from '../components/BookCard'
 import Image from 'next/image'
 import Link from 'next/link'
 

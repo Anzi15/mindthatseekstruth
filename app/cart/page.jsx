@@ -1,36 +1,36 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import { Button } from "@material-tailwind/react";
 import Link from "next/link";
 import CartItem from "../components/CartItem.jsx";
 import Image from "next/image";
 const CartPage = () => {
-  const [cartItems, setCartItems] = useState(null)
-  const [subTotal, setSubTotal] = useState(null)
-  const [total, setTotal] = useState(null)
+  const [cartItems, setCartItems] = useState(null);
+  const [subTotal, setSubTotal] = useState(null);
+  const [total, setTotal] = useState(null);
   const [productsLoading, setProductsLoading] = useState(true);
   const [products, setProducts] = useState([]);
   const [isSummaryExpanded, setIsSummaryExpanded] = useState(false);
-  const [allProductTags, setAllProductTags] = useState([])
-  const [discountValue, setDiscountValue] = useState(0)
-  const [discountType, setDiscountType] = useState(null)
-  const [shippingFees, setShippingFees] = useState(null)
-  const [checkoutLink, setCheckoutLink] = useState(`/checkout?source=cart`)
+  const [allProductTags, setAllProductTags] = useState([]);
+  const [discountValue, setDiscountValue] = useState(0);
+  const [discountType, setDiscountType] = useState(null);
+  const [shippingFees, setShippingFees] = useState(null);
+  const [checkoutLink, setCheckoutLink] = useState(`/checkout?source=cart`);
   // const [ finalShippingFees, setFinalShippingFees] = useState(null)
-  const [couponCodeApplied, setCouponCodeApplied] = useState(null)
+  const [couponCodeApplied, setCouponCodeApplied] = useState(null);
 
-  useEffect(()=>{
-    setCartItems(JSON.parse(localStorage.getItem('cart-items')) || [])
-    setProductsLoading(false)
-  },[])
+  useEffect(() => {
+    setCartItems(JSON.parse(localStorage.getItem("cart-items")) || []);
+    setProductsLoading(false);
+  }, []);
 
-  useEffect(()=>{
-    console.log(couponCodeApplied)
-  },[couponCodeApplied])
+  useEffect(() => {
+    console.log(couponCodeApplied);
+  }, [couponCodeApplied]);
 
   useEffect(() => {
     if (cartItems?.length) {
-      console.log(cartItems[0])
+      console.log(cartItems[0]);
       const getCartProducts = async (allProducts) => {
         const productsArr = [];
         allProducts.map((product) => {
@@ -57,30 +57,28 @@ const CartPage = () => {
       };
 
       getCartProducts(cartItems).then(async (products) => {
-        console.log(products)
+        console.log(products);
         let subtotal = 0;
         const allProductsTags = [];
-        
-        products.forEach((product) => {
-            subtotal += product.selectedVariant.price * product.quantity;
-            const prevTags = allProductTags
-            product.data.tags.forEach((tag)=>allProductTags.push(tag))
-        });
-        
-       
-       setAllProductTags(allProductsTags)
-       setSubTotal(subtotal)
-        setProducts(products); 
-        setProductsLoading(false);
-        if (subtotal > 1500){
-          console.log(subtotal > 1500)
-          setShippingFees(0)
-          console.log(shippingFees)
-          console.log(`set the shippin fee 0`)
-        }else{
-          console.log(`sdfasfasfsfasf`)
-          setShippingFees(300)
 
+        products.forEach((product) => {
+          subtotal += product.selectedVariant.price * product.quantity;
+          const prevTags = allProductTags;
+          product.data.tags.forEach((tag) => allProductTags.push(tag));
+        });
+
+        setAllProductTags(allProductsTags);
+        setSubTotal(subtotal);
+        setProducts(products);
+        setProductsLoading(false);
+        if (subtotal > 1500) {
+          console.log(subtotal > 1500);
+          setShippingFees(0);
+          console.log(shippingFees);
+          console.log(`set the shippin fee 0`);
+        } else {
+          console.log(`sdfasfasfsfasf`);
+          setShippingFees(300);
         }
       });
     } else {
@@ -90,34 +88,31 @@ const CartPage = () => {
 
   useEffect(() => {
     let checkoutUrl = `/checkout?source=cart`;
-  
+
     if (couponCodeApplied) {
       checkoutUrl += `&coupon=${couponCodeApplied}`;
     }
-  
+
     setCheckoutLink(checkoutUrl);
   }, [discountValue, couponCodeApplied]);
-  
 
-  useEffect(()=>{
-    setTotal(subTotal + shippingFees - discountValue)
-  },[subTotal, discountValue, shippingFees])
+  useEffect(() => {
+    setTotal(subTotal + shippingFees - discountValue);
+  }, [subTotal, discountValue, shippingFees]);
 
-  const getDiscountValue = (value, type, coupon_code_applied)=>{
-    setCouponCodeApplied(coupon_code_applied)
-    sessionStorage.setItem("couponApplied", coupon_code_applied)
-    if(type){
-      if(type == "amount") {setDiscountValue(value)}
-        else if(type == "percentage") {
-      const discountedPrice = subTotal * (1 - (value / 100));
-      setDiscountValue(Math.round(subTotal - discountedPrice))
-      
+  const getDiscountValue = (value, type, coupon_code_applied) => {
+    setCouponCodeApplied(coupon_code_applied);
+    sessionStorage.setItem("couponApplied", coupon_code_applied);
+    if (type) {
+      if (type == "amount") {
+        setDiscountValue(value);
+      } else if (type == "percentage") {
+        const discountedPrice = subTotal * (1 - value / 100);
+        setDiscountValue(Math.round(subTotal - discountedPrice));
+      }
+      console.log(coupon_code_applied);
     }
-    console.log(coupon_code_applied)
-    
-    }
-  }
-
+  };
 
   return (
     <main className="overflow-x-hidden py-8">
@@ -150,7 +145,7 @@ const CartPage = () => {
                         </p>
                       </div>
                       <div className="col-span-2">
-                      <p className="font-normal text-lg leading-8 text-gray-400 text-right pr-4">
+                        <p className="font-normal text-lg leading-8 text-gray-400 text-right pr-4">
                           Total
                         </p>
                       </div>
@@ -171,55 +166,71 @@ const CartPage = () => {
                     );
                   })}
 
-                  <div className="flex flex-col md:hidden">
+                <div className="flex flex-col md:hidden">
                   <div className="py-8 flex flex-col gap-4">
                     <div>
-                    <div className="flex items-center justify-between ">
-                      <p className="font-medium text-md leading-8 text-gray-800">
-                        Sub Total
-                      </p>
-                      <p className="font-semibold text-md leading-8 text-red-800">
-                          Rs. {subTotal}
-                      </p>
-                    </div>
+                      <div className="flex items-center justify-between ">
+                        <p className="font-medium text-md leading-8 text-gray-800">
+                          Sub Total
+                        </p>
+                        <p className="font-semibold text-md leading-8 text-red-800">
+                          ${subTotal}
+                        </p>
+                      </div>
 
-                    <div className="flex items-center justify-between ">
-                      <p className="font-medium text-md leading-8 text-gray-800">
-                        Shipping Fees
-                      </p>
-                      <p className={`font-semibold text-md leading-8 text-red-800 ${shippingFees == null && "skeleton-loading"}`}>
-                          Rs. {shippingFees}
-                      </p>
-                    </div>
+                      <div className="flex items-center justify-between ">
+                        <p className="font-medium text-md leading-8 text-gray-800">
+                          Shipping Fees
+                        </p>
+                        <p
+                          className={`font-semibold text-md leading-8 text-red-800 ${
+                            shippingFees == null && "skeleton-loading"
+                          }`}
+                        >
+                          ${shippingFees}
+                        </p>
+                      </div>
 
-                   {discountValue > 0 && <div className="flex items-center justify-between ">
-                      <p className="font-medium text-md leading-8 text-gray-800">
-                        Coupon Discount:
-                      </p>
-                      <p className="font-semibold text-md leading-8 text-red-800">
-                          - Rs. {discountValue}
-                      </p>
-                    </div>}
+                      {discountValue > 0 && (
+                        <div className="flex items-center justify-between ">
+                          <p className="font-medium text-md leading-8 text-gray-800">
+                            Coupon Discount:
+                          </p>
+                          <p className="font-semibold text-md leading-8 text-red-800">
+                            - ${discountValue}
+                          </p>
+                        </div>
+                      )}
                     </div>
 
                     <div className="flex items-center justify-between ">
                       <p className="font-medium text-xl leading-8 text-black">
-                       Total
+                        Total
                       </p>
-                      <p className={`font-semibold text-xl leading-8 text-red-800 ${shippingFees == null && "skeleton-loading"}`}>
-                          Rs. {total}
+                      <p
+                        className={`font-semibold text-xl leading-8 text-red-800 ${
+                          shippingFees == null && "skeleton-loading"
+                        }`}
+                      >
+                        ${total}
                       </p>
                     </div>
-
-                   </div>
-
-                    <Link className="w-full text-center bg-red-800 rounded-xl py-3 px-6 font-semibold text-lg text-white transition-all duration-500 hover:bg-red-900"   href={checkoutLink}>
-                      Checkout
-                    </Link>
                   </div>
+
+                  <Link
+                    className="w-full text-center bg-red-800 rounded-xl py-3 px-6 font-semibold text-lg text-white transition-all duration-500 hover:bg-red-900"
+                    href={checkoutLink}
+                  >
+                    Checkout
+                  </Link>
+                </div>
               </div>
 
-              <div className={`col-span-12 xl:col-span-4 md:bg-gray-50 w-full max-xl:px-6 max-w-3xl xl:max-w-lg mx-auto lg:pl-8 md:py-24  md:order-2 order ${isSummaryExpanded  && "bg-gray-50"}`}>
+              <div
+                className={`col-span-12 xl:col-span-4 md:bg-gray-50 w-full max-xl:px-6 max-w-3xl xl:max-w-lg mx-auto lg:pl-8 md:py-24  md:order-2 order ${
+                  isSummaryExpanded && "bg-gray-50"
+                }`}
+              >
                 <h2
                   className="font-manrope font-bold md:text-3xl text-lg leading-10 text-black pb-8 border-b border-gray-300 md:text-center text-left pl-4 flex gap-2 p-3 items-center "
                   onClick={() => {
@@ -249,78 +260,87 @@ const CartPage = () => {
                     </svg>
                   </div>
                 </h2>
-                <div className={`mt-8 md:flex flex-col bg-none md:p-0 p-4  ${isSummaryExpanded ? "flex " : "hidden"}`}>
+                <div
+                  className={`mt-8 md:flex flex-col bg-none md:p-0 p-4  ${
+                    isSummaryExpanded ? "flex " : "hidden"
+                  }`}
+                >
                   <div className="flex items-center justify-between pb-6">
                     <p className="font-normal text-lg leading-8 text-black">
                       {cartItems.length} Items
                     </p>
                     <p className="font-medium text-lg leading-8 text-black">
-                      Rs. {total}
+                      ${total}
                     </p>
                   </div>
                   <div>
-
                     <div className="flex pb-6">
                       <div className="relative w-full">
-
                         <div
                           id="dropdown-delivery"
                           aria-labelledby="dropdown-delivery"
                           className="z-20 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 absolute top-10 bg-white right-0"
-                        >
-
-                        </div>
+                        ></div>
                       </div>
                     </div>
 
-                   
-                   <div className="py-8 flex flex-col gap-4 w-full">
+                    <div className="py-8 flex flex-col gap-4 w-full">
+                      <div className="w-full">
+                        <div className="flex items-center justify-between ">
+                          <p className="font-medium text-md leading-8 text-gray-800">
+                            Sub Total
+                          </p>
+                          <p className="font-semibold text-md leading-8 text-red-800">
+                            ${subTotal}
+                          </p>
+                        </div>
+
+                        <div className="flex items-center justify-between ">
+                          <p className="font-medium text-md leading-8 text-gray-800">
+                            Shipping Fees
+                          </p>
+                          <p
+                            className={`font-semibold text-md leading-8 text-red-800 ${
+                              shippingFees == null && "skeleton-loading"
+                            }`}
+                          >
+                            ${shippingFees}
+                          </p>
+                        </div>
+
+                        {discountValue > 0 && (
+                          <div className="flex items-center justify-between ">
+                            <p className="font-medium text-md leading-8 text-gray-800">
+                              Coupon Discount:
+                            </p>
+                            <p className="font-semibold text-md leading-8 text-red-800">
+                              - ${discountValue}
+                            </p>
+                          </div>
+                        )}
+                      </div>
+
+                      <div className="flex items-center justify-between ">
+                        <p className="font-medium text-xl leading-8 text-black">
+                          Total
+                        </p>
+                        <p
+                          className={`font-semibold text-xl leading-8 text-red-800 ${
+                            shippingFees == null && "skeleton-loading"
+                          }`}
+                        >
+                          ${total}
+                        </p>
+                      </div>
+                    </div>
                     <div className="w-full">
-                    <div className="flex items-center justify-between ">
-                      <p className="font-medium text-md leading-8 text-gray-800">
-                        Sub Total
-                      </p>
-                      <p className="font-semibold text-md leading-8 text-red-800">
-                          Rs. {subTotal}
-                      </p>
+                      <Link
+                        href={`${checkoutLink}`}
+                        className=" text-center bg-red-800 rounded-xl py-3 px-6 font-semibold text-lg text-white transition-all duration-500 hover:bg-red-900 mb-8 block"
+                      >
+                        Checkout
+                      </Link>
                     </div>
-
-                    <div className="flex items-center justify-between ">
-                      <p className="font-medium text-md leading-8 text-gray-800">
-                        Shipping Fees
-                      </p>
-                      <p className={`font-semibold text-md leading-8 text-red-800 ${shippingFees == null && "skeleton-loading"}`}>
-                          Rs. {shippingFees}
-                      </p>
-                    </div>
-
-                   {discountValue > 0 && <div className="flex items-center justify-between ">
-                      <p className="font-medium text-md leading-8 text-gray-800">
-                        Coupon Discount:
-                      </p>
-                      <p className="font-semibold text-md leading-8 text-red-800">
-                          - Rs. {discountValue}
-                      </p>
-                    </div>}
-                    </div>
-
-                    <div className="flex items-center justify-between ">
-                      <p className="font-medium text-xl leading-8 text-black">
-                       Total
-                      </p>
-                      <p className={`font-semibold text-xl leading-8 text-red-800 ${shippingFees == null && "skeleton-loading"}`}>
-                          Rs. {total}
-                      </p>
-                    </div>
-
-                   </div>
-                   <div className="w-full">
-
-                    <Link href={`${checkoutLink}`} className=" text-center bg-red-800 rounded-xl py-3 px-6 font-semibold text-lg text-white transition-all duration-500 hover:bg-red-900 mb-8 block">
-                      Checkout
-                    </Link>
-
-                   </div>
                   </div>
                 </div>
               </div>
@@ -330,18 +350,24 @@ const CartPage = () => {
       ) : (
         <section className="flex w-screen flex-col items-center justify-center min-h-screen gap-6 max-w-screen ">
           <div className=" h-fit w-fit md:p-16 p-8 rounded-full bg-yellow-200 aspect-square flex items-center justify-center">
-            <Image src="https://firebasestorage.googleapis.com/v0/b/al-zehra.appspot.com/o/images%2Fempty-cart-SJLU3-Ak.webp?alt=media&token=373c6428-4ac1-446c-aa58-e26d7b50f578" alt="Empty Cart | No perfumes :(" 
-            width={310}
-            height={310}/>
+            <Image
+              src="https://firebasestorage.googleapis.com/v0/b/al-zehra.appspot.com/o/images%2Fempty-cart-SJLU3-Ak.webp?alt=media&token=373c6428-4ac1-446c-aa58-e26d7b50f578"
+              alt="Empty Cart | No perfumes :("
+              width={310}
+              height={310}
+            />
           </div>
           <div className="text-center">
             <h1 className="font-bold text-lg py-2">Your Cart Is Empty</h1>
             <p>Look like you have added nothing to your cart,</p>
             <p>Go ahead and explore some products.</p>
           </div>
-          <Link href="/shop" className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-full transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg my-9">
-  Explore products
-</Link>
+          <Link
+            href="/shop"
+            className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-full transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg my-9"
+          >
+            Explore products
+          </Link>
         </section>
       )}
     </main>

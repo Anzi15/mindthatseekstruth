@@ -7,7 +7,10 @@
     "hardCopyComparePrice": 105,
     "pdfPrice": 7.99,
     "pdfComparePrice": 26.99,
-    "slug": "me-my-psyche-and-i"
+    "slug": "me-my-psyche-and-i",
+    "variants":[
+      {"name":"PDF","price":7.99,"comparePrice":26.99},{"name":"Hard copy","price":80,"comparePrice":105}
+    ]
   },
   {
     "title": "Transient Thoughts And Me",
@@ -17,7 +20,10 @@
     "hardCopyComparePrice": 100,
     "pdfPrice": 6.99,
     "pdfComparePrice": 19.99,
-    "slug": "transient-thoughts-and-me"
+    "slug": "transient-thoughts-and-me",
+    "variants":[
+      {"name":"PDF","price":7.99,"comparePrice":26.99},{"name":"Hard copy","price":80,"comparePrice":105}
+    ]
   },
   {
     "title": "The Break-Up Pain Handbook",
@@ -27,7 +33,10 @@
     "hardCopyComparePrice": 125,
     "pdfPrice": 8.99,
     "pdfComparePrice": 36.99,
-    "slug": "the-break-up-pain-handbook"
+    "slug": "the-break-up-pain-handbook",
+    "variants":[
+      {"name":"PDF","price":7.99,"comparePrice":26.99},{"name":"Hard copy","price":80,"comparePrice":105}
+    ]
   },
   {
     "title": "The MindSet",
@@ -37,6 +46,9 @@
     "hardCopyComparePrice": 110,
     "pdfPrice": 9.99,
     "pdfComparePrice": 39.99,
-    "slug": "the-mindset"
+    "slug": "the-mindset",
+    "variants":[
+      {"name":"PDF","price":7.99,"comparePrice":26.99},{"name":"Hard copy","price":80,"comparePrice":105}
+    ]
   }
 ]

@@ -39,7 +39,7 @@ const CartItem = ({ product, productsLoading, quantity, cartItemsUpdater }) => {
       const updatedProducts = products.filter(
         (product) => product.product.id !== itemId
       );
-      cartItemsUpdater(updatedProducts)
+      cartItemsUpdater(updatedProducts);
       localStorage.setItem("cart-items", JSON.stringify(updatedProducts));
     }
     setConfirmationDialog(null);
@@ -96,7 +96,7 @@ const CartItem = ({ product, productsLoading, quantity, cartItemsUpdater }) => {
                 productsLoading && "skeleton-loading"
               }`}
             >
-              Rs. {product.selectedVariant.price}
+              ${product.selectedVariant.price}
             </h6>
           </div>
         </div>
@@ -196,7 +196,7 @@ const CartItem = ({ product, productsLoading, quantity, cartItemsUpdater }) => {
         </div>
         <div className="flex items-center max-[500px]:justify-center md:justify-end max-md:mt-3 h-full justify-center">
           <p className="font-bold text-lg leading-8 text-gray-600 text-center transition-all duration-300 group-hover:text-red-800 hidden md:flex ">
-            Rs. {product.selectedVariant.price * quantityState}
+            ${product.selectedVariant.price * quantityState}
           </p>
         </div>
       </div>

@@ -39,23 +39,11 @@ const Footer = () => {
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
-              <h2 className="mb-6 text-sm font-semibold uppercase">Resources</h2>
-              <ul className="text-gray-400 font-medium">
-                {resourcesLinks.map((link, index) => (
-                  <li key={index} className="mb-4">
-                    <a href={link.href} className="hover:underline">
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
               <h2 className="mb-6 text-sm font-semibold uppercase">Follow Us</h2>
               <ul className="text-gray-400 font-medium">
                 {followUsLinks.map((link, index) => (
                   <li key={index} className="mb-4">
-                    <a href={link.href} className="hover:underline">
+                    <a href={link.href} target="_blank" className="hover:underline">
                       {link.name}
                     </a>
                   </li>

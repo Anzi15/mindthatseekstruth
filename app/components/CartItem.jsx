@@ -64,7 +64,7 @@ const CartItem = ({ product, productsLoading, quantity, cartItemsUpdater }) => {
           src={
             productsLoading
               ? "https://firebasestorage.googleapis.com/v0/b/al-zehra.appspot.com/o/640px-HD_transparent_picture.png?alt=media&token=6b3789c8-da36-47ad-b36a-b2dfe62eb984"
-              : product.data.primaryImg
+              : product.data.image_url
           }
           width={280}
           height={280}

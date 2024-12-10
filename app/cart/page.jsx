@@ -61,10 +61,10 @@ const CartPage = () => {
         let subtotal = 0;
         const allProductsTags = [];
 
-        products.forEach((product) => {
+        products?.forEach((product) => {
           subtotal += product.selectedVariant.price * product.quantity;
           const prevTags = allProductTags;
-          product.data.tags.forEach((tag) => allProductTags.push(tag));
+          product?.data?.tags?.forEach((tag) => allProductTags.push(tag));
         });
 
         setAllProductTags(allProductsTags);

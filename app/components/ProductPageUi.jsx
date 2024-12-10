@@ -12,7 +12,6 @@ const ProductPageUi = ({parsedProduct}) => {
     const [selectedVariant, setSelectedVariant] = useState({price: 20, comparePrice: 30, name:"meow"});
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
- 
   const [routeChanged, setRouteChanged] = useState(false);
   const [isExpiryDateValid, setIsExpiryDateValid] = useState(false);
   const [shouldShowComparePrice, setShouldShowComparePrice] = useState(false);
@@ -29,10 +28,10 @@ const ProductPageUi = ({parsedProduct}) => {
     const productData = { productId, quantity, selectedVariant, product };
 
     if (productIndex === -1) {
+      toast.success("Item Added to Cart");
       // Product is not in the cart, add a new item
       prevCartItems.push(productData);
       localStorage.setItem("cart-items", JSON.stringify(prevCartItems));
-      toast.success("Item Added to Cart");
     } else {
       // Product is already in the cart, update its quantity
       prevCartItems[productIndex].quantity += quantity;
@@ -279,6 +278,7 @@ const ProductPageUi = ({parsedProduct}) => {
         <Button
           className="text-nowrap flex items-center gap-3 py-4 px-6"
           onClick={addToCart}
+
           variant="outlined"
         >
           <IoMdCart className="text-xl" />

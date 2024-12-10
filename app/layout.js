@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "./components/Header"
 import Footer from "./components/Footer";
 import ToastProvider from "./components/ToastProvider"
+import Head from 'next/head';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,6 +24,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
+       <head>
+        <script
+          src="//code.tidio.co/qdooksfizp0t2mpcla797raduz6rnty3.js"
+          async
+        ></script>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

@@ -10,7 +10,7 @@ const LetsTalkSection = () => {
 
         <h2 className="md:text-4xl text-2xl font-bold uppercase my-4">Let's have a discussion about <strong className="before:bg-pink-400">You</strong></h2>
 
-        <Link href="#" className="text-[#2563EB] hover:text-[#0849d6]  flex gap-2 items-center justify-center font-semibold">
+        <Link href="/consultation" className="text-[#2563EB] hover:text-[#0849d6]  flex gap-2 items-center justify-center font-semibold">
             Learn more about skype consultation
             <FaAngleRight />
         </Link>

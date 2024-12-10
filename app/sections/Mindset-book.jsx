@@ -16,7 +16,7 @@ const MindsetBookSection = () => {
           empower your path to success.
         </h2>
 
-        <CtaBtn text={"Upgrade your mindset"} />
+        <CtaBtn text={"Upgrade your mindset"} redirect={"books/the-mindset"} />
       </div>
       <div className="md:w-1/2 py-10 ">
         <Image

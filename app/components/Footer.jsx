@@ -14,8 +14,8 @@ const Footer = () => {
   ];
 
   const legalLinks = [
-    { name: "Privacy Policy", href: "https://mindthatseekstruth.com/privacy-policy" },
-    { name: "Terms & Conditions", href: "https://mindthatseekstruth.com/terms" },
+    { name: "Privacy Policy", href: "/privacy-policy" },
+    { name: "Terms & Conditions", href: "/terms" },
   ];
 
   return (

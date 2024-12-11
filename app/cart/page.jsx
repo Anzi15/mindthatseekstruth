@@ -4,7 +4,10 @@ import { Button } from "@material-tailwind/react";
 import Link from "next/link";
 import CartItem from "../components/CartItem.jsx";
 import Image from "next/image";
+import { useRouter } from 'next/navigation'
+import PayPalButton from "../components/PayPalButton.jsx";
 const CartPage = () => {
+  const router = useRouter()
   const [cartItems, setCartItems] = useState(null);
   const [subTotal, setSubTotal] = useState(null);
   const [total, setTotal] = useState(null);
@@ -217,12 +220,7 @@ const CartPage = () => {
                     </div>
                   </div>
 
-                  <Link
-                    className="w-full text-center bg-red-800 rounded-xl py-3 px-6 font-semibold text-lg text-white transition-all duration-500 hover:bg-red-900"
-                    href={checkoutLink}
-                  >
-                    Checkout
-                  </Link>
+                  <PayPalButton items={cartItems} totalAmount={total} />
                 </div>
               </div>
 
@@ -334,12 +332,7 @@ const CartPage = () => {
                       </div>
                     </div>
                     <div className="w-full">
-                      <Link
-                        href={`${checkoutLink}`}
-                        className=" text-center bg-red-800 rounded-xl py-3 px-6 font-semibold text-lg text-white transition-all duration-500 hover:bg-red-900 mb-8 block"
-                      >
-                        Checkout
-                      </Link>
+                    <PayPalButton items={[{ name: 'Book 1', quantity: 1, price: '20.00', currency: 'USD' }]} totalAmount={'20.00'} onSuccess={(payerEmail, payerName)=>{ router.push(`/after-purchase/books/thanks?payerEmail=${payerEmail}&payerName=${payerName}`)}} />
                     </div>
                   </div>
                 </div>

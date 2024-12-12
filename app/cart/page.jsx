@@ -64,14 +64,20 @@ const CartPage = () => {
         let subtotal = 0;
         const allProductsTags = [];
 
-        products?.forEach((product) => {
-          subtotal += product.selectedVariant.price * product.quantity;
-          const prevTags = allProductTags;
-          product?.data?.tags?.forEach((tag) => allProductTags.push(tag));
-        });
+const updatedTags = [...allProductTags]; // Create a copy of the current tags
 
-        setAllProductTags(allProductsTags);
-        setSubTotal(subtotal);
+products?.forEach((product) => {
+  subtotal += product.selectedVariant.price * product.quantity; // Calculate subtotal
+  product?.data?.tags?.forEach((tag) => updatedTags.push(tag)); // Add product tags
+});
+
+// Limit subtotal to two decimals
+subtotal = Math.round(subtotal * 100) / 100;
+
+// Update state with the new values
+setAllProductTags(updatedTags); 
+setSubTotal(subtotal);
+
         setProducts(products);
         setProductsLoading(false);
         if (subtotal > 1500) {
@@ -100,7 +106,8 @@ const CartPage = () => {
   }, [discountValue, couponCodeApplied]);
 
   useEffect(() => {
-    setTotal(subTotal + shippingFees - discountValue);
+    setTotal(parseFloat((subTotal + shippingFees - discountValue).toFixed(2)));
+
   }, [subTotal, discountValue, shippingFees]);
 
   const getDiscountValue = (value, type, coupon_code_applied) => {
@@ -220,7 +227,9 @@ const CartPage = () => {
                     </div>
                   </div>
 
-                  <PayPalButton items={cartItems} totalAmount={total} />
+                  <Link href={`/checkout?source=cart`} className=" text-center bg-red-800 rounded-xl py-3 px-6 font-semibold text-lg text-white transition-all duration-500 hover:bg-red-900 mb-8 block">
+                      Checkout
+                    </Link>
                 </div>
               </div>
 
@@ -332,7 +341,9 @@ const CartPage = () => {
                       </div>
                     </div>
                     <div className="w-full">
-                    <PayPalButton items={[{ name: 'Book 1', quantity: 1, price: '20.00', currency: 'USD' }]} totalAmount={'20.00'} onSuccess={(payerEmail, payerName)=>{ router.push(`/after-purchase/books/thanks?payerEmail=${payerEmail}&payerName=${payerName}`)}} />
+                    <Link href={`/checkout?source=cart`} className=" text-center bg-red-800 rounded-xl py-3 px-6 font-semibold text-lg text-white transition-all duration-500 hover:bg-red-900 mb-8 block">
+                      Checkout
+                    </Link>
                     </div>
                   </div>
                 </div>

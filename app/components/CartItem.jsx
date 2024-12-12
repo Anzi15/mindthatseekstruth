@@ -150,7 +150,7 @@ const CartItem = ({ product, productsLoading, quantity, cartItemsUpdater }) => {
             <button
               className="group z-10 rounded-r-xl px-2 md:py-[12px] py-3 border border-gray-200 flex items-center justify-center shadow-sm shadow-transparent transition-all duration-500 hover:bg-gray-50 hover:border-gray-300 hover:shadow-gray-300 focus-within:outline-gray-300"
               onClick={() => {
-                const newQuantity = quantityState + 1;
+                const newQuantity = parseInt(quantityState) + 1;
                 setQuantityState(newQuantity);
               }}
             >

@@ -23,6 +23,7 @@ import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import PayPalButton from "../components/PayPalButton";
 import preparePayPalData from "../helper/preparePayPalData";
+import { redirect } from 'next/navigation';
 
 const CheckoutPage = () => {
   const searchParams = useSearchParams();
@@ -151,7 +152,6 @@ const CheckoutPage = () => {
     const { items, paypalTotal, itemTotal } = preparePayPalData(products, totalAmount);
     console.log(items, paypalTotal, itemTotal)
     setTotal(paypalTotal)
-
     setItems(items)
   }, [products, subTotal, shippingFees, discountValue]);
 
@@ -186,7 +186,6 @@ const CheckoutPage = () => {
       status: "pending",
       items: [...products],
       payment: {
-        status: "pending",
         amount: total,
         currency: "USD",
       },
@@ -195,17 +194,22 @@ const CheckoutPage = () => {
       ConfirmationEmailSent: false,
     };
 
-    console.log(orderData)
     try {
       await setDoc(doc(db, "orders", orderData.orderId), orderData);
       setShouldAskToPay(true)
     } catch (error) {
+      toast.error("something went wrong")
       console.log("there a error");
       console.log(error);
       success = false;
     } finally {
     }
   };
+  
+  const handlePostSubmit = async (e)=>{
+    setShouldAskToPay(false);
+    redirect("/")
+  }
 
   return (
     <>
@@ -303,7 +307,7 @@ const CheckoutPage = () => {
                   shouldAskToPay && (
                     <section className="w-screen h-screen fixed inset-0 z-20  bg-gray-300 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-gray-100 flex items-center justify-center">
                       <div className="md:w-1/2 w-full p-4">
-                      <PayPalButton items={items} totalAmount={total} onSuccess={()=>{}} />
+                      <PayPalButton items={items} totalAmount={total} onSuccess={handlePostSubmit} />
                       </div>
                     </section>
                   )

@@ -4,7 +4,7 @@ export default function PayPalButton({ items, totalAmount, onSuccess }) {
   // Function to calculate item total
   const calculateItemTotal = () => {
     return items
-      .reduce((total, item) => total + parseFloat(item.price) * item.quantity, 0)
+      .reduce((total, item) => total + parseFloat(item.unit_amount.value) * item.quantity, 0)
       .toFixed(2); // Ensure it's two decimal places
   };
 
@@ -30,7 +30,7 @@ export default function PayPalButton({ items, totalAmount, onSuccess }) {
                 },
                 items: items.map((item) => ({
                   name: item.name,
-                  unit_amount: { currency_code: 'USD', value: item.price },
+                  unit_amount: { currency_code: 'USD', value: item.unit_amount.value },
                   quantity: item.quantity,
                 })),
               },

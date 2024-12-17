@@ -21,38 +21,8 @@ import { Button } from "@material-tailwind/react";
 import { toast } from "react-toastify";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
-
-const paymentMethods = [
-  {
-    icon: "/cod.webp",
-    name: "Cash on Delivery",
-    context: "Purchase goods, pay when they arrive",
-    identifier: "COD",
-  },
-  {
-    icon: "/Jazz cash logo vector.webp",
-    name: "JazzCash",
-    context:
-      "Send your payment to JazzCash on this number: <a class='text-light-blue-800' href='https://wa.me/923323947336?text=Hi, please guide me i want to pay using jazzcash for a order on your website' target='_blank'>03323947336 </a>, and <a class='text-light-blue-800' href='https://wa.me/923323947336?text=Hi, please guide me i want to share my payment receipt' target='_blank'> send us a screenshot </a>",
-    identifier: "JZC",
-  },
-  {
-    icon: "/easypaisa.webp",
-    name: "EasyPaisa",
-    context:
-      "Send your payment to easypaisa on this number: <a class='text-light-blue-800' href='https://wa.me/923323947336?text=Hi, please guide me i want to pay using easypasia for a order on your website' target='_blank'>03323947336 </a>, and <a class='text-light-blue-800' target='_blank' href='https://wa.me/923323947336?text=Hi, please guide me i share my screenshot with you of my payment'> send us a screenshot </a>",
-    identifier: "EZP",
-  },
-  {
-    icon: "/bank.webp",
-    name: "Bank Transfer",
-    context:
-      "Send your payment to this IBAN number:  <a class='text-light-blue-800' href='https://wa.me/923323947336?text=Hi, please guide me i want to pay using bank transfer for a order on your website' target='_blank'>PK05 BAHL 1252 0981 0005 9601</a>",
-    identifier: "BT",
-  },
-];
-
-
+import PayPalButton from "../components/PayPalButton";
+import preparePayPalData from "../helper/preparePayPalData";
 
 const CheckoutPage = () => {
   const searchParams = useSearchParams();
@@ -81,15 +51,14 @@ const CheckoutPage = () => {
   const [discountType, setDiscountType] = useState(null);
   const [shippingFees, setShippingFees] = useState(null);
   const [isSummaryExpanded, setIsSummaryExpanded] = useState(false);
+  const [shouldAskToPay, setShouldAskToPay] = useState(false);
+  const [items, setItems] = useState([])
 
   const [couponCodeApplied, setCouponCodeApplied] = useState(null);
   // const [cartItems, setCartItems] = useState([]);
   const router = useRouter();
-
-  // const navigate = (page) => {
-  //   // Example: Navigate to '/about' page
-  //   router.push(`${page}`);
-  // };
+  // const {items} = preparePayPalData(products)
+  console.log(items)
 
   const getDiscountValue = (value, type, coupon_code_applied) => {
     setCouponCodeApplied(coupon_code_applied);
@@ -175,7 +144,15 @@ const CheckoutPage = () => {
     getProducts();
   }, [source, quantity]);
   useEffect(() => {
-    setTotal(subTotal + shippingFees - discountValue);
+    const totalAmount = products.reduce((acc, item) => {
+      return acc + item.quantity * (item.selectedVariant.price || 0);
+    }, 0);
+    if(products.length < 1 || !totalAmount) return
+    const { items, paypalTotal, itemTotal } = preparePayPalData(products, totalAmount);
+    console.log(items, paypalTotal, itemTotal)
+    setTotal(paypalTotal)
+
+    setItems(items)
   }, [products, subTotal, shippingFees, discountValue]);
 
   function generateOrderId(length = 8) {
@@ -209,58 +186,19 @@ const CheckoutPage = () => {
       status: "pending",
       items: [...products],
       payment: {
-        method: paymentMethod,
+        status: "pending",
         amount: total,
-        currency: "PKR",
+        currency: "USD",
       },
       subTotalAmount: subTotal,
-      discounts: [
-        {
-          code: couponCodeApplied,
-          amount: discountValue,
-        },
-      ],
-      shippingFees,
       grandTotal: total,
       ConfirmationEmailSent: false,
     };
 
+    console.log(orderData)
     try {
       await setDoc(doc(db, "orders", orderData.orderId), orderData);
-      if (discountValue > 0) {
-        const q = query(
-          collection(db, "coupons"),
-          where("couponCode", "==", couponCodeApplied)
-        );
-
-        const querySnapshot = await getDocs(q);
-
-        if (!querySnapshot.empty) {
-          // Assuming there's only one document with this couponCode
-          const docRef = doc(db, "coupons", querySnapshot.docs[0].id);
-          const docSnap = querySnapshot.docs[0];
-
-          const docSnapData = docSnap.data();
-          console.warn(docSnapData);
-
-          // Increment the usedCount field
-          const updatedUsedCount = (docSnapData.usedCount || 0) + 1;
-
-          console.log({ ...docSnapData, usedCount: updatedUsedCount });
-
-          // Update the document with the new usedCount
-          await updateDoc(docRef, {
-            usedCount: updatedUsedCount,
-          });
-        } else {
-          console.warn("No document found with the specified couponCode");
-        }
-      }
-      if (source == "cart") localStorage.removeItem("cart-items");
-      toast.success("Your order has been placed");
-      router.push(
-        `/order/confirmed/${orderData.orderId}?paymentMethod=${orderData.payment.method}&name=${orderData.customer.firstName}&email=${orderData.customer.email}`
-      );
+      setShouldAskToPay(true)
     } catch (error) {
       console.log("there a error");
       console.log(error);
@@ -272,7 +210,7 @@ const CheckoutPage = () => {
   return (
     <>
       <header className=" py-8 text-center bg-white border-b-4">
-        <h1 className="text-4xl">AL ZEHRA PERFUMES</h1>
+        <h1 className="text-4xl">MIND THAT SEEKS TRUTH</h1>
       </header>
       <main className="w-full bg-[#F9FAFB] py-10 flex md:flex-row flex-col-reverse">
         <section className="md:w-1/2 px-8 w-full">
@@ -351,41 +289,7 @@ const CheckoutPage = () => {
                 />
               </div>
             </div>
-            <div className="w-full flex flex-col gap-4 border-b pb-8">
-              <h3 className="text-xl text-left my-5 Shipping information">
-                Payment Methods
-              </h3>
-              <div className="flex flex-wrap md:gap-4 justify-between gap-2">
-                {paymentMethods.map((method, i) => {
-                  return (
-                    <div
-                      className={`lg:w-[48%] w-full transition-all duration-300 rounded-xl text-left gap-4 select-none  px-3 py-5 relative border-2 cursor-pointer flex items-center ${
-                        method.identifier == paymentMethod && "border-brandRed"
-                      } justify-start`}
-                      key={i}
-                      onClick={(e) => {
-                        setPaymentMethod(method.identifier);
-                      }}
-                    >
-                      <img src={method?.icon} className="h-8" alt="" />
-                      <div>
-                        <h3>{method.name}</h3>
-                        <div
-                          className="text-sm text-gray-500"
-                          dangerouslySetInnerHTML={{ __html: method.context }}
-                        ></div>
-                      </div>
 
-                      <div
-                        className={`bg-brandRed w-fit  p-1 rounded-full absolute top-0 right-0 translate-x-2 -translate-y-2 ${
-                          paymentMethod == method.identifier ? "flex" : "hidden"
-                        }`}
-                      >
-                        <IoCheckmarkSharp className="text-white" />
-                      </div>
-                    </div>
-                  );
-                })}
                 <Button
                   className="w-full bg-black py-3 rounded-xl text-white text-lg flex items-center justify-center gap-2 group my-3 !font-semibold"
                   loading={isSubmissionLoading}
@@ -394,8 +298,16 @@ const CheckoutPage = () => {
                   Confirm Order
                   <MdOutlineKeyboardArrowRight className="group-hover:translate-x-2 transition-all duration-200" />
                 </Button>
-              </div>
-            </div>
+
+                {
+                  shouldAskToPay && (
+                    <section className="w-screen h-screen fixed inset-0 z-20  bg-gray-300 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-10 border border-gray-100 flex items-center justify-center">
+                      <div className="md:w-1/2 w-full p-4">
+                      <PayPalButton items={items} totalAmount={total} onSuccess={()=>{}} />
+                      </div>
+                    </section>
+                  )
+                }
           </form>
         </section>
 
@@ -505,18 +417,6 @@ const CheckoutPage = () => {
                   </div>
                 </div>
                 <div>
-                  <div className="flex items-center justify-between ">
-                    <p className="font-medium text-md leading-8 text-gray-800">
-                      Shipping
-                    </p>
-                    <p
-                      className={`font-semibold text-md leading-8 text-red-800 ${
-                        productsLoading ? "skeleton-loading" : ""
-                      }`}
-                    >
-                      {shippingFees == 0 ? "FREE" : `Rs. ${shippingFees}`}
-                    </p>
-                  </div>
                 </div>
                 {discountValue ? (
                   <div>

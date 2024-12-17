@@ -22,6 +22,15 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  if (typeof window !== "undefined" && window.trustedTypes) {
+    if (!window.trustedTypes.getPolicy("default")) {
+      window.trustedTypes.createPolicy("default", {
+        createHTML: (input) => input,
+        createScript: (input) => input,
+        createScriptURL: (input) => input,
+      });
+    }
+  }
   return (
     <html lang="en" suppressHydrationWarning>
        <head>

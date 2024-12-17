@@ -106,7 +106,7 @@ setSubTotal(subtotal);
   }, [discountValue, couponCodeApplied]);
 
   useEffect(() => {
-    setTotal(parseFloat((subTotal + shippingFees - discountValue).toFixed(2)));
+    setTotal(parseFloat(subTotal).toFixed(2))
 
   }, [subTotal, discountValue, shippingFees]);
 
@@ -185,19 +185,6 @@ setSubTotal(subtotal);
                         </p>
                         <p className="font-semibold text-md leading-8 text-red-800">
                           ${subTotal}
-                        </p>
-                      </div>
-
-                      <div className="flex items-center justify-between ">
-                        <p className="font-medium text-md leading-8 text-gray-800">
-                          Shipping Fees
-                        </p>
-                        <p
-                          className={`font-semibold text-md leading-8 text-red-800 ${
-                            shippingFees == null && "skeleton-loading"
-                          }`}
-                        >
-                          ${shippingFees}
                         </p>
                       </div>
 
@@ -299,19 +286,6 @@ setSubTotal(subtotal);
                           </p>
                           <p className="font-semibold text-md leading-8 text-red-800">
                             ${subTotal}
-                          </p>
-                        </div>
-
-                        <div className="flex items-center justify-between ">
-                          <p className="font-medium text-md leading-8 text-gray-800">
-                            Shipping Fees
-                          </p>
-                          <p
-                            className={`font-semibold text-md leading-8 text-red-800 ${
-                              shippingFees == null && "skeleton-loading"
-                            }`}
-                          >
-                            ${shippingFees}
                           </p>
                         </div>
 

@@ -2,12 +2,16 @@
 import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid';
 import InputField from '../components/InputField';
 import { useState } from 'react';
+import { Button } from "@material-tailwind/react";
+import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
+
 
 export default function AskQuestionPage() {
     const [email, setEmail] = useState("")
     const [name, setName] = useState("")
     const [gender, setGender] = useState("")
     const [question, setQuestion] = useState("")
+    const [isSubmissionLoading, setIsSubmissionLoading] = useState(false)
     return (
     <main>
     <section className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
@@ -98,7 +102,7 @@ export default function AskQuestionPage() {
     <h2 className="md:text-4xl text-2xl font-bold uppercase  text-center">Empty your <strong className="before:bg-blue-400">mind</strong></h2>
     <p className='text-center text-xl    text-gray-500'>Feel free to ask me anything</p>
 
-    <form className='md:w-[50%] mx-auto my-10 gap-3 flex flex-col'>
+    <form className='p-4 md:w-[50%] mx-auto my-10 gap-3 flex flex-col'>
     <InputField
                 inputAutoComplete={"email"}
                 inputName={"Email"}
@@ -123,7 +127,15 @@ export default function AskQuestionPage() {
                 requiredInput={true}
                 className="w-1/2"
               />
-              <textarea value={question} onInput={setQuestion}></textarea>
+              <textarea placeholder='Be bold in asking your question..' value={question} onInput={(e)=>{setQuestion(e.target.value)}} className='border-2 border-gray-300 rounded-lg p-2 min-h-[15rem] max-h-[30rem]'></textarea>
+              <Button
+                                className="w-full bg-black py-3 rounded-xl text-white text-lg flex items-center justify-center gap-2 group my-3 !font-semibold"
+                                loading={isSubmissionLoading}
+                                type="submit"
+                              >
+                                Clear your mind for $25
+                                <MdOutlineKeyboardArrowRight className="group-hover:translate-x-2 transition-all duration-200" />
+                              </Button>
     </form>
 
         </div>

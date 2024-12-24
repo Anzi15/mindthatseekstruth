@@ -4,18 +4,25 @@ import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/react";
 import { IoIosOptions } from "react-icons/io";
 import Link from "next/link";
 import BookCard from '../components/BookCard';
+import { collection, getDocs } from 'firebase/firestore';
+import { app, db } from '@/lib/firebaseConfig';
 
 // Helper function to read JSON file
-const getProductsFromJSON = async () => {
-  const filePath = path.join(process.cwd(), '/app/data', 'products.json');
-  const fileContents = await fs.promises.readFile(filePath, 'utf-8');
-  return JSON.parse(fileContents);
-};
+const getAllBooks = async ()=>{
+  try {
+    const booksCollectionRef = collection(db, "books"); // Reference to the "books" collection
+    const querySnapshot = await getDocs(booksCollectionRef); // Fetch documents
+    const allBooks = querySnapshot.docs.map(doc => ({
+      id: doc.id, 
+      ...doc.data() 
+    })); // Extract data and include document ID
+    return allBooks; // Return or handle the books data as needed
+  } catch (error) {
+    console.error("Error fetching books:", error);
+  }
+}
 
 export async function generateMetadata() {
-  const products = await getProductsFromJSON();
-
-  const productCount = products.length;
   const title =
      ` Top break up cure, and psychological books of merhan dadbeh | Mind that seeks truth`
 
@@ -26,8 +33,8 @@ export async function generateMetadata() {
 }
 
 export default async function ProductsPage({ searchParams }) {
-  // Fetch products from JSON file
-  let products = await getProductsFromJSON();
+  let products = await getAllBooks();
+  console.log(products)
 
   // Handle sorting based on query parameter
   const sortParam = searchParams.sort;

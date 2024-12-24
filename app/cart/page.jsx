@@ -333,7 +333,7 @@ setSubTotal(subtotal);
               alt="Empty Cart | No perfumes :("
               width={310}
               height={310}
-              className="skeleton-loading"
+              className=""
             />
           </div>
           <div className="text-center">

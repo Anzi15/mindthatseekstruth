@@ -1,10 +1,8 @@
 "use client"
-import React from 'react'
-import Image from 'next/image'
-import { StoreIcon } from 'lucide-react'
-import OurNumbersSection from '../sections/OurNumbersSection'
-import TestimonialsSection from '../sections/TestimonialsSection'
-import FAQs from '../components/FAQs'
+ import Image from 'next/image'
+ import OurNumbersSection from '../sections/OurNumbersSection'
+ import TestimonialsSection from '../sections/TestimonialsSection'
+ import FAQs from '../components/FAQs'
 
 const page = () => {
   return (
@@ -19,17 +17,17 @@ const page = () => {
         </p>
         </div>
         <div className="md:w-1/2">
-            <Image src='/mehran dadbeh about us.gif' width='720' height='720' className='w-full' alt='Mehran Dadbeh | Break up author' priority={true} placeholder="blur" blurDataURL="https://img.freepik.com/free-vector/white-blurred-background_1034-249.jpg" />
+            <Image src='/mehran dadbeh about us.gif' width='720' height='720' className='w-full' alt='Mehran Dadbeh | Break up author' priority={true} placeholder="blur" blurDataURL="https:img.freepik.com/free-vector/white-blurred-background_1034-249.jpg" />
         </div>
-      </section>
+      </section> 
 
       <OurNumbersSection />
-      <TestimonialsSection/>
+      <TestimonialsSection/> 
 
       <section className="px-8 md:w-1/2 mx-auto">
         
 <blockquote className="text-xl italic font-semibold text-gray-900 dark:text-white">
-    <svg className="w-8 h-8 text-gray-400 dark:text-gray-600 mb-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
+    <svg className="w-8 h-8 text-gray-400 dark:text-gray-600 mb-4" aria-hidden="true" xmlns="http:www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 14">
         <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z"/>
     </svg>
     <p>" I discuss emotional breakups, relationship challenges and help my clients to move on after their breakup.
@@ -38,7 +36,7 @@ const page = () => {
 </blockquote>
 <h3 className="italic text-xl font-semibold text-gray-700 py-4"> - Mehran Dadbeh</h3>
       </section>
-      <FAQs />
+      <FAQs /> 
     </main>
   )
 }

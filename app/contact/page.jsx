@@ -100,8 +100,8 @@ const ContactPage = () => {
             src={
               "https://firebasestorage.googleapis.com/v0/b/al-zehra.appspot.com/o/images%2Fpink-abstract-Di78k6pk.webp?alt=media&token=220c363a-d7d3-4734-b0eb-59260fc1a544"
             }
-            alt="best perfumes in pakistan"
-            className="max-h-[30rem] rounded-xl md:aspect-auto"
+            alt="Break up cure | Mehran Dadbeh | relationship consultant"
+            className="max-h-[30rem] rounded-xl md:aspect-auto skeleton-loading"
             height={900}
             width={600}
           />

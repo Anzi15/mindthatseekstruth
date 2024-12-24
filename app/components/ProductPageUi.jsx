@@ -5,9 +5,11 @@ import Link from "next/link";
 import { Button } from "@material-tailwind/react";
 import { IoMdCart } from "react-icons/io";
 import { toast } from "react-toastify";
+import { useRouter } from 'next/navigation'
 
 
 const ProductPageUi = ({parsedProduct}) => {
+  const router = useRouter()
   const product = JSON.parse(parsedProduct)
     const [selectedVariant, setSelectedVariant] = useState({price: 20, comparePrice: 30, name:"meow"});
   const [isLoading, setIsLoading] = useState(false);
@@ -43,6 +45,15 @@ const ProductPageUi = ({parsedProduct}) => {
   const handleVariantChange = (variant) => {
     setSelectedVariant(variant);
   };
+  
+  const redirectToCheckout = () => {
+    const variantIndex = product.variants.findIndex(
+      variant => JSON.stringify(variant) === JSON.stringify(selectedVariant)
+    );
+    const validVariantIndex = variantIndex === -1 ? 0 : variantIndex; // Default to 0 if -1
+    router.push(`/checkout?source=${product.slug}&quantity=${quantity}&selectedVariantIndex=${validVariantIndex}`);
+  };
+  
 
   const updateQuantity = (qnty = 1, action) => {
     setQuantity((prevQuantity) => {
@@ -284,7 +295,7 @@ const ProductPageUi = ({parsedProduct}) => {
           <IoMdCart className="text-xl" />
           <p className="hidden md:flex">Add To Cart</p>
         </Button>
-        <Button className="w-full py-3.5 text-lg bg-black font-semibold">Buy now</Button>
+        <Button className="w-full py-3.5 text-lg bg-black font-semibold" onClick={redirectToCheckout}>Buy now</Button>
 
 
         

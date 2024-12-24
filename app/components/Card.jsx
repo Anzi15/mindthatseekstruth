@@ -8,7 +8,7 @@ const Card = ({ image = "/Mehran_dadbeh-standing.webp", title, description }) =>
       {image ? (
         <Image
           src={image}
-          className="aspect-[6/16] w-full object-cover rounded-2xl max-h-[30rem] my-4"
+          className="aspect-[6/16] w-full object-cover rounded-2xl max-h-[30rem] my-4 skeleton-loading"
           width={720}
           height={1080}
           alt={title || "Default Alt"}

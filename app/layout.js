@@ -34,6 +34,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
        <head>
+       <link rel="icon" href="/logo.png" type="image/gif" sizes="16x16" />
         <script
           src="//code.tidio.co/qdooksfizp0t2mpcla797raduz6rnty3.js"
           async

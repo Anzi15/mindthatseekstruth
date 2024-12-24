@@ -1,5 +1,4 @@
 "use client"
-import { Section } from 'lucide-react'
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -15,11 +14,11 @@ const BookSection = () => {
             Me, My Psyche and I
         </h3>
         <p className="text-gray-500">
-        Dive deep into the uncharted territories of the human mind with Me, My Psyche, and I, a thought-provoking and introspective exploration of self-discovery, mental health, and perso...
+        Dive deep into the uncharted territories of the human mind with Me, My Psyche, and I, a thought-provoking and introspective exploration of self discovery, mental health, and perso...
         </p>
         </div>
         <div className="md:w-1/2">
-        <Image src="https://i.ibb.co/mcWJfdc/smartmockups-m3ug5rw0.jpg" alt="Me, My Psyche and I" width="720" height="1080" className="rounded" />
+        <Image src="https://i.ibb.co/mcWJfdc/smartmockups-m3ug5rw0.jpg" alt="Me, My Psyche and I" width="720" height="1080" className="rounded skeleton-loading" />
         </div>
      </div>
 
@@ -34,7 +33,7 @@ const BookSection = () => {
         </p>
         </div>
         <div className="md:w-1/2">
-        <Image src="https://i.ibb.co/G9Y8RFy/mediamodifier-image-1.png" alt="Me, My Psyche and I" width="720" height="1080" className="rounded-lg" />
+        <Image src="https://i.ibb.co/G9Y8RFy/mediamodifier-image-1.png" alt="Me, My Psyche and I" width="720" height="1080" className="rounded-lg skeleton-loading" />
         </div>
      </div>
 
@@ -48,7 +47,7 @@ const BookSection = () => {
         </p>
         </div>
         <div className="md:w-1/2">
-        <Image src="https://i.ibb.co/VvxVgsq/mediamodifier-image.png" alt="Me, My Psyche and I" width="720" height="1080" className="" />
+        <Image src="https://i.ibb.co/VvxVgsq/mediamodifier-image.png" alt="Me, My Psyche and I" width="720" height="1080" className="skeleton-loading" />
         </div>
      </div>
 

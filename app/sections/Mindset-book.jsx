@@ -23,7 +23,7 @@ const MindsetBookSection = () => {
           src="https://i.ibb.co/dKSJNgp/Dadbeh-print-Pdf.jpg"
           width="1080"
           height="1080"
-          className="rounded-tr-[3rem] rounded-bl-[3rem] hover:rounded-br-[3rem] hover:rounded-tl-[3rem]
+          className="skeleton-loading rounded-tr-[3rem] rounded-bl-[3rem] hover:rounded-br-[3rem] hover:rounded-tl-[3rem]
             hover:rounded-bl-none hover:rounded-tr-none transition-all shadow-sm shadow-black"
           alt="Break up cure | Mehran Dadbeh"
         />

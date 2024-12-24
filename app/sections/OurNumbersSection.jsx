@@ -1,4 +1,4 @@
-import { Section } from 'lucide-react'
+"use client"
 import React from 'react'
 
 import AnimateNumbers from '../components/AnimatedNumbers'

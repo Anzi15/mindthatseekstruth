@@ -8,7 +8,7 @@ const BookCard = ({ bookImg, bookTitle, bookDescription, bookSlug = "" }) => {
       {/* Hover to zoom container */}
       <Link className="overflow-hidden max-w-full relative aspect-square group" href={`/books/${bookSlug}`}>
         <Image
-          className="rounded-t-lg transform transition-transform duration-300 ease-in-out group-hover:scale-105"
+          className="rounded-t-lg transform transition-transform duration-300 ease-in-out group-hover:scale-105 skeleton-loading"
           src={bookImg}
           alt={bookTitle}
           width={400}

@@ -1,17 +1,7 @@
 import ProductPageUi from '@/app/components/ProductPageUi';
-import fs from 'fs';
-import path from 'path';
-import ProductImgsCarousel from "@/app/components/ProductImgsCarousel.jsx";
 
-// Fetch the data for the product based on the slug
-export async function getProductData(slug) {
-  const filePath = path.join(process.cwd(), 'app', 'data', 'products.json');
-  const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-
-  // Find the product matching the slug
-  const product = data.find((product) => product.slug === slug);
-  return product || null;
-}
+import Image from 'next/image';
+import { getProductData } from '@/app/components/getProductData';
 
 // Server component for the product detail page
 export default async function ProductDetailPage({ params }) {
@@ -30,15 +20,22 @@ export default async function ProductDetailPage({ params }) {
 
   return (
     <main className="flex justify-evenly w-full md:flex-row flex-col relative h-full">
-        <ProductImgsCarousel
-          className=" md:max-h-[565px] md:max-w-[445px] md:gap-8"
-          parsedProductImages={JSON.stringify([
-            productData.image_url,
-          ])}
-          parsedThumbnails={JSON.stringify([
-            productData.image_url,
-          ])}
-        />
+            <div className="md:px-8 px-4 md:w-1/2 w-full md:block md:max-w-[40rem]">
+              {/* Active Image Display */}
+              <div className="activeImg relative w-full aspect-square">
+                  <Image
+                    src={productData.image_url}
+                    alt="Break up cure | Mind that seeks truth"
+                    className={`w-full aspect-square rounded-md skeleton-loading absolute transition-opacity duration-300`}
+                    width={720}
+                    height={720}
+                    priority={true}
+                  />
+                
+              </div>
+        
+
+            </div>
           <ProductPageUi parsedProduct={JSON.stringify(productData)}/>
 
           

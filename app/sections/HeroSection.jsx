@@ -5,7 +5,7 @@ import Image from 'next/image'
 const HeroSection = () => {
   return (
     <section className="flex w-screen py-4 relative" >
-      <Image src="/Mehran_dadbeh_hero-cover.webp" width="1080" height="720" className="w-full inset-0" alt="Break Up Cure | Break consultation"/>
+      <Image src="/Mehran_dadbeh_hero-cover.webp" width="1080" height="720" className="w-full inset-0 skeleton-loading" alt="Break Up Cure | Break consultation"/>
     </section>
   )
 }

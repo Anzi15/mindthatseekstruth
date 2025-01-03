@@ -10,7 +10,7 @@ const page = () => {
         < Image src="/dlsakflsajkdf.png" width={1080} height={1080} className='skeleton-loading w-full inset-0 select-none' alt='Break up consultation' draggable="false" />
       </Link>
       <section className='flex flex-col my-10 justify-center items-center w-full p-6'>
-      <h2 className="md:text-4xl text-2xl font-bold uppercase my-4">Let's have a discussion about <strong className="before:bg-blue-400">You</strong></h2>
+      <h2 className="md:text-4xl text-2xl font-bold uppercase my-4 text-center">Let's have a discussion about <strong className="before:bg-blue-400">You</strong></h2>
       <p className='text-center text-2xl text-gray-600'>An example of how our ultimate discussion would look like:</p>
       <div className='p-4 w-full'>
       <iframe

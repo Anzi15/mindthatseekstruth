@@ -1,50 +1,5 @@
 import React from "react";
-
-const pricingPlans = [
-    {
-      title: "Silver Plan",
-      description: "Quick and focused consultation to address immediate concerns.",
-      price: 60,
-      duration: "30 Minutes",
-      features: [
-        "30 minutes of personalized Skype consultation",
-        "Focused guidance for specific issues",
-        "Quick actionable advice",
-        "Professional and empathetic support",
-        "Flexible scheduling options",
-      ],
-      buttonText: "Make an Appointment",
-    },
-    {
-      title: "Gold Plan (Most Popular)",
-      description: "In-depth session to work through challenges and find clarity.",
-      price: 100,
-      duration: "1 Hour",
-      features: [
-        "1 hour of immersive Skype consultation",
-        "Deep dive into relationship dynamics",
-        "Customized strategies for lasting solutions",
-        "Insightful emotional healing techniques",
-        "Priority scheduling and follow-up support",
-      ],
-      buttonText: "Make an Appointment",
-    },
-    {
-      title: "Platinum Plan",
-      description: "Comprehensive support for long-term growth and transformation.",
-      price: 500,
-      duration: "6 Hours",
-      features: [
-        "6 hours of expert Skype consultation",
-        "Holistic approach to  breakup recovery",
-        "Exclusive resources for personal growth",
-        "Step-by-step roadmap to achieve your goals",
-        "Ongoing support and actionable plans",
-        "Flexible session breakdown to fit your schedule",
-      ],
-      buttonText: "Make an Appointment",
-    },
-  ];
+import pricingPlans from "../data/ConsultationPlans.json"
   
 
 const ConsultationPricing = () => {
@@ -91,7 +46,7 @@ const ConsultationPricing = () => {
                 ))}
               </ul>
               <a
-                href="#"
+                href={`/consultation/book/${plan.slug}`}
                 className="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white dark:focus:ring-primary-900"
               >
                 {plan.buttonText}

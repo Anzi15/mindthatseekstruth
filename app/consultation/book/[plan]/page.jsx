@@ -18,13 +18,13 @@ const page = ({params}) => {
   return (
     <main className='my-8 p-4 text-center'>
       <div>
-        <h2 className='mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white'>
-          {planData.title}
+        <h2 className='mb-8 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white'>
+         Book {planData.title}
         </h2>
       </div>
       <section className='flex md:flex-row md:justify-center flex-col gap-10 md:gap-4'>
         <div className='md:w-1/2 md:px-20 items-center flex justify-center'>
-          <ConsultationBookingMechanism />
+          <ConsultationBookingMechanism planData={planData} />
         </div>
         <div className='md:py-20'>
         <ul role="list" className="mb-8 space-y-8 text-left">
@@ -64,7 +64,6 @@ const page = ({params}) => {
         </div>
 
       </section>
-      {plan}
     </main>
   )
 }

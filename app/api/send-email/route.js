@@ -33,7 +33,7 @@ export async function POST(req) {
     }
 
     const response = await mg.messages.create('mindthatseekstruth.com', {
-      from: 'Mehran Dadhbeh <mailgun@mindthatseekstruth.com>',
+      from: 'Mehran Dadhbeh <noreply@mindthatseekstruth.com>',
       to: [recipient],
       subject,
       text: content,

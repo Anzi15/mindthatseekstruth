@@ -1,5 +1,5 @@
 import ProductPageUi from '@/app/components/ProductPageUi';
-
+import { generateEbookHtml } from '@/app/components/EmailEbookSender';
 import Image from 'next/image';
 import { getProductData } from '@/app/components/getProductData';
 
@@ -7,7 +7,6 @@ import { getProductData } from '@/app/components/getProductData';
 export default async function ProductDetailPage({ params }) {
   const { slug } = params;
   const productData = await getProductData(slug);
-
   if (!productData) {
     return (
       <div className="py-10">

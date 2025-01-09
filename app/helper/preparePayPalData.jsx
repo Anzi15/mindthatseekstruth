@@ -32,7 +32,7 @@ const preparePayPalData = (products, totalAmount) => {
     return {
       items: paypalItems,
       paypalTotal: parseFloat(totalAmount).toFixed(2), // Ensure total is a valid number
-      itemTotal: itemTotal, // For validation
+    itemTotal: itemTotal, // For validation
     };
   };
     export default preparePayPalData

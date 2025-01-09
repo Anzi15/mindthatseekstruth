@@ -26,6 +26,11 @@ const links = [
   },
   {
     id: 4,
+    name: "Counseling",
+    href: "/consultation",
+  },
+  {
+    id: 5,
     name: "Contact Us",
     href: "/contact",
   },

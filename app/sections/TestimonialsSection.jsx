@@ -77,7 +77,7 @@ export default function TestimonialsSection({ testimonials = [
               }),
             ]}
           >
-            <CarouselContent>
+            <CarouselContent className="select-none">
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="flex flex-col px-4 md:py-5 sm:p-6 items-center">

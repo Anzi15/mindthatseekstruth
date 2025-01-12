@@ -1,12 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import { toast } from "react-toastify";
 import InputField from "./InputField";
 import { IoCheckmarkSharp } from "react-icons/io5";
 import { Radio } from "@material-tailwind/react";
 import PayPalButton from "./PayPalButton";
 import { Button } from "@material-tailwind/react";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { addDoc, collection, setDoc } from "firebase/firestore";
+import { db } from "@/lib/firebaseConfig";
+import { sendEmailVerification } from "firebase/auth";
+import { generateConsultationHtml } from "./EmailEbookSender";
+import { redirect } from "next/navigation";
 
 const timeOptions = [
   {
@@ -20,8 +26,10 @@ const timeOptions = [
 ];
 
 const ConsultationBookingMechanism = ({planData}) => {
+  console.log(planData)
   const [name, setName] = useState("");
   const [skypeId, setSkypeId] = useState("");
+  const [email, setEmail] = useState("");
   const [time, setTime] = useState("11AM - 3PM");
   const [day, setDay] = useState("Monday");
   const [shouldAskToPay, setShouldAskToPay] = useState(false)
@@ -42,8 +50,38 @@ const ConsultationBookingMechanism = ({planData}) => {
     0
   );
 
-  const handlePostSubmit = ()=>{
-    setShouldAskToPay(false)
+  const handlePostSubmit = async ()=>{
+    try {
+         const response = await fetch('/api/send-email', {
+           method: 'POST',
+           headers: {
+             'Content-Type': 'application/json',
+             "x-mailgun-api-key": process.env.NEXT_PUBLIC_MAILGUN_API_KEY
+           },
+           body: JSON.stringify({
+             "recipient": email,
+             "subject": `Enjoy your order, ${name}!`,
+             "content": generateConsultationHtml({name, email, skypeId, time, day, planData: planData}),
+           }),
+         });
+   
+         const data = await response;
+         console.log(data)
+         if (response.ok) {
+           const wait = await toast.success("consultation booked with mehran!");
+            setEmail("");
+            setName("")
+            setSkypeId("")
+          } else {
+         toast.error("Something went wrong, but don't worry we will deliver your order manually, you can even reach out to us on contact us page.")
+         }
+       } catch (error) {
+         console.error('Error:', error);
+         toast.error("Something went wrong, but don't worry we will deliver your order manually, you can even reach out to us on contact us page.")
+       } finally {
+         setShouldAskToPay(false);
+
+       }
   }
 
   const handleSubmit = (e)=>{
@@ -60,6 +98,14 @@ const ConsultationBookingMechanism = ({planData}) => {
         inputautoComplete={"name"}
         requiredInput={true}
         valueReturner={setName}
+      />
+      <InputField
+        inputName="Your email"
+        inputType="email"
+        inputValue={email}
+        inputautoComplete={"email"}
+        requiredInput={true}
+        valueReturner={setEmail}
       />
       <InputField
         inputName="Skype ID"

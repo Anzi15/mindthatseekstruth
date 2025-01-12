@@ -8,9 +8,6 @@ const page = ({params}) => {
   const {plan} = params;
   let planData = null;
   pricingPlans.forEach(planDetails => {
-    console.log(planDetails.slug)
-    console.log(plan)
-    console.log(planDetails.slug == plan)
     if(planDetails.slug == plan){ planData = planDetails}
   });
 

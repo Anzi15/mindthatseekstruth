@@ -50,7 +50,6 @@ export default async function ProductsPage({ searchParams }) {
     products = products.sort((a, b) => a.title.localeCompare(b.title));
   }
 
-  console.log(products.length > 1)
   return (
     <div className="md:px-6">
       {products.length > 0 ? <><div className="px-6 flex w-full justify-between items-center">

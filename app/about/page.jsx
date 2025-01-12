@@ -24,11 +24,11 @@ const page = () => {
       <OurNumbersSection />
       <TestimonialsSection/> 
 
-      <section className='flex w-full md:py-28 py-10 flex-col items-center p-6 mg:gap-0 gap-20 justify-between'>
+      <section className='flex w-full md:py-28 py-10 flex-col items-center p-6 mg:gap-0 gap-20 justify-between m-auto max-w-7xl'>
       <h2 className="md:text-3xl text-2xl font-bold uppercase">About <strong className=" font-extrabold before:bg-red-200">Mehran</strong>.</h2>
       
       
-      <div className='flex w-full md:flex-row flex-col md:p-6 gap-6'>
+      <div className='flex w-full md:flex-row flex-col md:p-6 gap-6 text-lg '>
     <div className='md:w-1/2 flex flex-col gap-6'>
     <p className=' text-gray-600'>
         Mehran Dadbeh brings a uniquely powerful perspective to understanding and treating Obsessive-Compulsive Disorder (OCD), combining deeply personal experience with extensive research into neuroscience, philosophy of consciousness, and behavioral psychology. His journey with OCD began in childhood, experiencing various manifestations of the condition firsthand—from repetitive hand-washing to complex thought patterns. Rather than letting these challenges define him, Mehran used his analytical mind, honed through chess and puzzle-solving, to transform his experience into a comprehensive understanding of OCD and its subsets.
@@ -46,15 +46,41 @@ Mehran's core teaching centers on a transformative insight: that human conscious
         </p>
     </div>
 
-        <div className="md:w-1/2 group overflow-hidden rounded-2xl hover:shadow-lg">
+        <div className="md:w-1/2 group overflow-hidden rounded-2xl hover:shadow-lg ">
           <Image src={"https://i.ibb.co/ZXBRCy7/IMG-20250111-WA0040.jpg"} alt="Mind that seeks truth | HOCD OCD" width={1080} height={1080} className='select-none rounded-2xl group-hover:scale-105 transition-all skeleton-loading saturate-100 group-hover:saturate-150 ' draggable="false" />
         </div>
       </div>
       </section>
 
 
-      <section>
+      <section className='bg-[#f6fff8] my-12 flex py-12 gap-5 md:flex-row flex-col-reverse px-6 max-w-7xl m-auto'>
+        <Image src="/mehran soothing.gif" alt='mind relaxing gif' width={1080} height={1080} className='md:w-1/2 select-none aspect-square object-cover' draggable={false} />
         
+        <div className='md:w-1/2 flex flex-col gap-6'>
+    <p className=' text-gray-600'>
+    Drawing from both Eastern and Western traditions, Mehran's methodology is grounded in the understanding that human consciousness predates our current brain structure by millions of years. This perspective helps individuals separate their core identity from their OCD symptoms, viewing them not as personal defects but as manageable neurological patterns that can be rewired through conscious intervention.
+        </p>
+
+        <p className=' text-gray-600'>
+        Through his YouTube channel "The One Point," Mehran has created an extensive library of over 700 videos specifically addressing OCD, HOCD, and intrusive thoughts. His broader body of work, comprising more than 3,000 videos, explores the interconnected nature of consciousness, fear, ego, and human relationships. These resources offer practical guidance while maintaining a deep philosophical understanding of the mind-body connection.
+
+        </p>
+
+        <p className=' text-gray-600'>
+        Mehran's background in business administration from Lewis & Clark College and his training in Aikido contribute to his holistic approach to mental wellness. His understanding of mind-body coordination and universal energy flow (Ki) provides additional tools for helping individuals overcome OCD's challenges.
+        </p>
+
+        <p className=' text-gray-600'>
+        His work emphasizes several key principles:
+The fundamental distinction between awareness and thought
+The role of contradiction in awakening consciousness
+The brain as an organ that can be rewired through neuroplasticity
+The importance of understanding values and choices as separate from intrusive thoughts
+The power of awareness in overcoming OCD and its subsets
+Currently, through his website mindthatseekstruth.com and presence on multiple platforms including Rumble, Mehran continues to share his insights and help individuals worldwide. His approach combines scientific understanding with philosophical depth, offering hope and practical solutions to those struggling with OCD and its various manifestations.
+
+        </p>
+    </div>
       </section>
 
 

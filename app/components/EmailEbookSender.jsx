@@ -20,7 +20,7 @@ const itemHtml = (item) => {
   return `
     <div class='image-container' style="text-align: center; margin-bottom: 20px;">
       <h2 class='heading' style="font-size: 20px; color: #555; margin-bottom: 10px;">${item.title}</h2>
-      <a href="${item.downloadLink || "https://example.com"}" 
+      <a href="${item.downloadUrl || "https://example.com"}" 
    style="display: inline-block; padding: 10px 20px; font-size: 16px; color: white; background-color: #007BFF; text-decoration: none; border-radius: 5px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: background-color 0.3s ease;"
    target="_blank" 
    rel="noopener noreferrer">

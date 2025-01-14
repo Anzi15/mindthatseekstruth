@@ -1,8 +1,8 @@
-import data from '../data/products.json';
+import data from "../data/liveBooks.js"
 import { getDocs } from 'firebase/firestore';
 
 export async function getProductData(slug) {
-  // Find the product matching the slug
+  console.log(slug)
   const product = data.find((product) => product.slug === slug);
   return product || null;
 }

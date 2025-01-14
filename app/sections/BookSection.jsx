@@ -52,7 +52,7 @@ const BookSection = () => {
      </div>
 
 <Link
-href="/books"
+href="/shop"
 className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden  font-normal text-gray-600 rounded-lg group bg-gradient-to-br from-violet-600 to-blue-400 group-hover:from-indigo-600 group-hover:to-indigo-500 hover:text-white  text-xl my-10 ">
 <span
   className="relative py-2 px-8 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-opacity-0">

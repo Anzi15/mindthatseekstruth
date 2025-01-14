@@ -1,5 +1,4 @@
 import ProductPageUi from '@/app/components/ProductPageUi';
-import { generateEbookHtml } from '@/app/components/EmailEbookSender';
 import Image from 'next/image';
 import { getProductData } from '@/app/components/getProductData';
 

@@ -150,7 +150,6 @@ const CheckoutPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmissionLoading(true);
-    let success = false;
     const orderData = {
       orderId: generateOrderId(),
       customer: {
@@ -188,8 +187,6 @@ const CheckoutPage = () => {
   };
 
   const handlePostSubmit = async (orderData) => {
-    console.log(orderData)
-    console.log(generateEbookHtml(orderData.items))
     setShouldAskToPay(false);
     const items =[]
     try {
@@ -218,8 +215,9 @@ const CheckoutPage = () => {
       toast.error("Something went wrong, but don't worry we will deliver your order manually, you can even reach out to us on contact us page.")
     } finally {
       setShouldAskToPay(false);
+      redirect("/shop")
+
     }
-    // redirect("/")
   };
 
   return (

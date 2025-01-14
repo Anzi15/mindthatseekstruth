@@ -66,8 +66,19 @@ const ConsultationBookingMechanism = ({planData}) => {
          });
    
          const data = await response;
-         console.log(data)
          if (response.ok) {
+          const response = await fetch('/api/send-email', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              "x-mailgun-api-key": process.env.NEXT_PUBLIC_MAILGUN_API_KEY
+            },
+            body: JSON.stringify({
+              "recipient": email,
+              "subject": `You've new consultation mehran!`,
+              "content": generateConsultationHtml({name, email, skypeId, time, day, planData: planData}),
+            }),
+          });
            const wait = await toast.success("consultation booked with mehran!");
             setEmail("");
             setName("")

@@ -107,3 +107,14 @@ h1 {
 .cursor-brain{
   cursor: url('https://i.ibb.co/dPvww3c/brain-1f9e0.png'), auto;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}

@@ -26,7 +26,6 @@ const timeOptions = [
 ];
 
 const ConsultationBookingMechanism = ({planData}) => {
-  console.log(planData)
   const [name, setName] = useState("");
   const [skypeId, setSkypeId] = useState("");
   const [email, setEmail] = useState("");

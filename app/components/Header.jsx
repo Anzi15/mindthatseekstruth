@@ -31,8 +31,8 @@ const links = [
   },
   {
     id: 5,
-    name: "Contact Us",
-    href: "/contact",
+    name: "Support me",
+    href: "/support",
   },
 ];
 

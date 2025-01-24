@@ -8,6 +8,7 @@ import AskQuestionIntro from "./sections/AskQuestionIntro";
 import OurNumbersSection from "./sections/OurNumbersSection";
 import TestimonialsSection from "./sections/TestimonialsSection";
 import DoubtsSection from "./sections/DoubtsSection";
+import YoutubeLatestVideosSections from "./components/YoutubeContent";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <HeroSection />
         <HelpSeekerSection />
         <MindsetBookSection />
+        <YoutubeLatestVideosSections channelId={"UUbVS0QWs2qSP02xkOjtqVCQ"}/>
         <LetsTalkSection/>
         <BookSection/>
         <AskQuestionIntro/>

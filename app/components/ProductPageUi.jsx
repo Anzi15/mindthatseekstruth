@@ -6,6 +6,7 @@ import { Button } from "@material-tailwind/react";
 import { IoMdCart } from "react-icons/io";
 import { toast } from "react-toastify";
 import { useRouter } from 'next/navigation'
+import { MdOutlineRemoveRedEye } from "react-icons/md";
 
 
 const ProductPageUi = ({parsedProduct}) => {
@@ -338,6 +339,15 @@ const ProductPageUi = ({parsedProduct}) => {
         
       </div>
     </div>
+
+    {
+      product?.sampleBook  && (
+        <a target="_blank" href={product?.sampleBook} className="flex gap-2    items-center">
+          <MdOutlineRemoveRedEye />
+          View sample book
+        </a>
+      )
+    }
 
     <ul className="space-y-4 text-left text-gray-500 dark:text-gray-400 my-8">
   <li className="flex items-center space-x-3 rtl:space-x-reverse">

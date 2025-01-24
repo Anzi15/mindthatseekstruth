@@ -85,3 +85,36 @@ export function generateConsultationHtml(data) {
     </footer>
   </div>`;
 }
+
+export function generateCoffeeHtml(data){
+  const { supporterName, coffeeCount, message } = data;
+
+  return `
+  <div class='container' style="font-family: Arial, sans-serif; max-width: 600px; margin: 20px auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <h1 style="text-align: center; color: #333; font-size: 24px; margin-bottom: 10px;">Thank You!</h1>
+    <h2 style="text-align: center; color: #555; font-size: 20px; margin-bottom: 20px;">Your Support Means the World</h2>
+
+    <p style="font-size: 16px; color: #555; margin-bottom: 20px;">
+      Dear <strong>${supporterName}</strong>,
+    </p>
+    <p style="font-size: 16px; color: #555; margin-bottom: 20px;">
+      Thank you for buying Mehran <strong>${coffeeCount}</strong> ${coffeeCount === 1 ? 'coffee' : 'coffees'}! Your support helps Mehran continue creating and sharing his work with the world.
+    </p>
+
+    ${
+      message
+        ? `<p style="font-size: 16px; color: #555; margin-bottom: 20px;">
+          <strong>Your Message:</strong> "${message}"
+        </p>`
+        : ""
+    }
+
+    <p style="font-size: 16px; color: #555; margin-bottom: 20px;">
+      Mehran deeply appreciates your generosity and encouragement.
+    </p>
+
+    <footer style="margin-top: 30px; text-align: center; color: #999; font-size: 14px;">
+      <p>&copy; ${new Date().getFullYear()} Mehran. All rights reserved.</p>
+    </footer>
+  </div>`;
+}

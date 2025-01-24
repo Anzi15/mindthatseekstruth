@@ -1,6 +1,17 @@
-import React from 'react'
+"use client"
+
+import React, { Suspense } from 'react'
 
 const page = () => {
+  return (
+        <Suspense fallback={<div>Loading..</div>}>
+          <Content />
+        </Suspense>
+  )
+}
+
+
+const Content = ()=>{
   return (
     <section className="bg-white dark:bg-gray-900">
     <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
@@ -26,5 +37,4 @@ const page = () => {
   </section>
   )
 }
-
 export default page

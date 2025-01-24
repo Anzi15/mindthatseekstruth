@@ -54,24 +54,8 @@ import BuyMeACoffeeMechanism from '../components/BuyMeACoffeeMechanism'
                     Support mehran's work
                 </h2>
 
-                <BuyMeACoffeeMechanism/>
-                {/* <iframe 
-  width="560" 
-  height="315" 
-  src="https://www.youtube.com/embed?listType=playlist&list=UUbVS0QWs2qSP02xkOjtqVCQ" 
-  frameBorder="0" 
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-  allowfullscreen>
-</iframe>
-
-<iframe 
-  width="560" 
-  height="315" 
-  src="https://www.youtube.com/embed?listType=playlist&list=UUbVS0QWs2qSP02xkOjtqVCQ&index=2" 
-  frameborder="0" 
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-  allowfullscreen>
-</iframe> */}
+                <BuyMeACoffeeMechanism id="send" />
+               
 
 
             </div>

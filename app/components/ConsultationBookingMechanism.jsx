@@ -59,7 +59,7 @@ const ConsultationBookingMechanism = ({planData}) => {
            },
            body: JSON.stringify({
              "recipient": email,
-             "subject": `Enjoy your order, ${name}!`,
+             "subject": `Your consultation is booked, ${name}!`,
              "content": generateConsultationHtml({name, email, skypeId, time, day, planData: planData}),
            }),
          });
@@ -74,7 +74,7 @@ const ConsultationBookingMechanism = ({planData}) => {
             },
             body: JSON.stringify({
               "recipient": email,
-              "subject": `You've new consultation mehran!`,
+              "subject": `You've new consultation, Mehran!`,
               "content": generateConsultationHtml({name, email, skypeId, time, day, planData: planData}),
             }),
           });

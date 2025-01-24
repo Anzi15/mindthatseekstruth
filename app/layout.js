@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import ToastProvider from "./components/ToastProvider";
 import Head from "next/head";
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 
 
 // export const metadata = {
@@ -33,15 +33,16 @@ export default function RootLayout({ children }) {
       <body
         className={` antialiased`}
       >
-        {hideHeaderFooter ? (
-          { children }
-        ) : (
+        <Suspense>
+
+        {
           <ToastProvider>
             <Header />
             {children}
             <Footer />
           </ToastProvider>
-        )}
+        }
+        </Suspense>
       </body>
     </html>
   );

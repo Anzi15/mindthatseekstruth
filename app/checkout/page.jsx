@@ -69,9 +69,9 @@ const CheckoutPage = () => {
     const getProducts = async () => {
       if (source == "cart") {
         const cartItems = JSON.parse(localStorage.getItem("cart-items")) || [];
-
+        console.log(cartItems)
         if (cartItems?.length) {
-          let subtotal = 0;f
+          let subtotal = 0;
           const productTags = [];
           cartItems.forEach((item) => {
             subtotal +=

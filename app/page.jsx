@@ -9,6 +9,7 @@ import OurNumbersSection from "./sections/OurNumbersSection";
 import TestimonialsSection from "./sections/TestimonialsSection";
 import DoubtsSection from "./sections/DoubtsSection";
 import YoutubeLatestVideosSections from "./components/YoutubeContent";
+import ListedInMagazine from "./components/ListedInMagazine";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <YoutubeLatestVideosSections channelId={"UUbVS0QWs2qSP02xkOjtqVCQ"}/>
         <LetsTalkSection/>
         <BookSection/>
+        <ListedInMagazine/>
         <AskQuestionIntro/>
         <TestimonialsSection/>
         <DoubtsSection/>

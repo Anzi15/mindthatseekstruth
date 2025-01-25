@@ -22,6 +22,10 @@ const page = () => {
       </section> 
 
       <OurNumbersSection />
+      <video width="320" height="240" controls preload="true" className='w-full'>
+      <source src="/mehran-intro.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
       <TestimonialsSection/> 
 
       <section className='flex w-full md:py-28 py-10 flex-col items-center p-6 mg:gap-0 gap-20 justify-between m-auto max-w-7xl'>

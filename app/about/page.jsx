@@ -35,7 +35,7 @@ const page = () => {
       <div className='flex w-full md:flex-row flex-col md:p-6 gap-6 text-lg '>
     <div className='md:w-1/2 flex flex-col gap-6'>
     <p className=' text-gray-600'>
-        Mehran Dadbeh brings a uniquely powerful perspective to understanding and treating Obsessive-Compulsive Disorder (OCD), combining deeply personal experience with extensive research into neuroscience, philosophy of consciousness, and behavioral psychology. His journey with OCD began in childhood, experiencing various manifestations of the condition firsthand—from repetitive hand-washing to complex thought patterns. Rather than letting these challenges define him, Mehran used his analytical mind, honed through chess and puzzle-solving, to transform his experience into a comprehensive understanding of OCD and its subsets.
+        Mehran Dadbeh brings a uniquely powerful perspective to understanding and treating Obsessive-Compulsive Disorder (OCD), combining deeply personal experience with extensive research into neuroscience, philosophy of consciousness, and behavioral psychology. His journey with OCD began in childhood, experiencing various manifestations of the condition firsthand—from repetitive hand-washing to complex thought patterns. Rather than letting these challenges define him, Mehran used his analytical Psyche, honed through chess and puzzle-solving, to transform his experience into a comprehensive understanding of OCD and its subsets.
         What sets Mehran's approach apart is his revolutionary perspective on consciousness and its relationship to OCD. 
         </p>
 

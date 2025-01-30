@@ -17,6 +17,7 @@ export default async function ProductDetailPage({ params }) {
   const { title, description, price, image } = productData;
 
   return (
+    <>
     <main className="flex justify-evenly w-full md:flex-row flex-col relative h-full">
             <div className="md:px-8 px-4 md:w-1/2 w-full md:block md:max-w-[40rem]">
               {/* Active Image Display */}
@@ -38,5 +39,18 @@ export default async function ProductDetailPage({ params }) {
 
           
       </main>
+
+          <div className='md:px-8 px-4'>
+            <h3 className='font-bold '>
+              Description
+            </h3>
+            {(productData.oldSiteDesc ? productData.oldSiteDesc : productData.description)
+  .split('.')
+  .map((line, index) => (
+    <p key={index} className="text-gray-800 py-2">{line}</p>
+  ))}
+
+          </div>
+    </>
   );
 }

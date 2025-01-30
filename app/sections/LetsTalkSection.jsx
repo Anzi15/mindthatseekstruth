@@ -25,7 +25,7 @@ const LetsTalkSection = () => {
   />
   <Card
     image="/control.webp"
-    title="Reclaim Control"
+    title="Reclaim Control (OCD/HOCD)"
     description="Learn practical strategies and techniques tailored to manage and reduce anxiety, break intrusive thought patterns, and build confidence."
     className="w-full"
   />

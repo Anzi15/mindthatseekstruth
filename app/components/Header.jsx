@@ -16,8 +16,8 @@ const links = [
   },
   {
     id: 2,
-    name: "Shop all",
-    href: "/shop",
+    name: "Books",
+    href: "/books",
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ const links = [
   },
   {
     id: 5,
-    name: "Support me",
+    name: "Support Channel",
     href: "/support",
   },
 ];

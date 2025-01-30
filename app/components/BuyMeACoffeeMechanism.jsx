@@ -49,12 +49,12 @@ const BuyMeACoffeeMechanism = () => {
   return (
     <form className="md:w-1/2 p-6 rounded-lg w-full m-auto" id="send" onSubmit={handleSubmit}>
       <h2 className="text-2xl font-bold text-gray-800 py-4 text-center">
-        Buy Mehran Dadbeh a coffee
+        Support The Channel
       </h2>
 
       <div className="border-[#004aad] border-[1px] rounded-lg py-3 sm:text-2xl text-xl w-full px-2 md:px-3 bg-[#004bad25] items-center flex justify-center m-auto ">
         <div className="flex md:gap-4 gap-2 items-center">
-        ☕ <span className="md:text-3xl text-2xl text-gray-700 px-4 flex items-center">x</span>
+        Support <span className="md:text-3xl text-2xl text-gray-700 px-4 flex items-center">x</span>
           {[1, 3, 5].map((number) => {
             return (
               <div
@@ -124,7 +124,7 @@ const BuyMeACoffeeMechanism = () => {
                   )}
 
       <button className="w-full text-center bg-[#004aad] py-4 rounded-lg text-white font-semibold" type="submit">
-        Support ${numberOfCoffee * 10}
+        Submit
       </button>
     </form>
   );

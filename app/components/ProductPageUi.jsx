@@ -342,7 +342,7 @@ const ProductPageUi = ({parsedProduct}) => {
 
     {
       product?.sampleBook  && (
-        <a target="_blank" href={product?.sampleBook} className="flex gap-2    items-center">
+        <a target="_blank" href={product?.sampleBook} className="flex gap-2    items-center text-blue-900">
           <MdOutlineRemoveRedEye />
           View sample book
         </a>
@@ -350,96 +350,30 @@ const ProductPageUi = ({parsedProduct}) => {
     }
 
     <ul className="space-y-4 text-left text-gray-500 dark:text-gray-400 my-8">
-  <li className="flex items-center space-x-3 rtl:space-x-reverse">
-    <svg
-      className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
-      aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 16 12"
-    >
-      <path
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M1 5.917L5.724 10.5 15 1.5"
-      />
-    </svg>
-    <span>Insightful content</span>
-  </li>
-  <li className="flex items-center space-x-3 rtl:space-x-reverse">
-    <svg
-      className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
-      aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 16 12"
-    >
-      <path
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M1 5.917L5.724 10.5 15 1.5"
-      />
-    </svg>
-    <span>Elegant writing style</span>
-  </li>
-  <li className="flex items-center space-x-3 rtl:space-x-reverse">
-    <svg
-      className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
-      aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 16 12"
-    >
-      <path
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M1 5.917L5.724 10.5 15 1.5"
-      />
-    </svg>
-    <span>Perfect for literary enthusiasts</span>
-  </li>
-  <li className="flex items-center space-x-3 rtl:space-x-reverse">
-    <svg
-      className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
-      aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 16 12"
-    >
-      <path
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M1 5.917L5.724 10.5 15 1.5"
-      />
-    </svg>
-    <span>Beautifully designed cover</span>
-  </li>
-  <li className="flex items-center space-x-3 rtl:space-x-reverse">
-    <svg
-      className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
-      aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 16 12"
-    >
-      <path
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M1 5.917L5.724 10.5 15 1.5"
-      />
-    </svg>
-    <span>Rich and engaging themes</span>
-  </li>
+    {
+      product.features.map((feature,index)=>{
+        return (
+          <li key={index} className="flex items-center space-x-3 rtl:space-x-reverse">
+          <svg
+            className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 16 12"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M1 5.917L5.724 10.5 15 1.5"
+            />
+          </svg>
+          <span>{feature}</span>
+        </li>
+        )
+      })
+    }
 </ul>
 
   </div>

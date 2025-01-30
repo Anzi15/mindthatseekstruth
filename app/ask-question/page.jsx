@@ -100,14 +100,14 @@ export default function AskQuestionPage() {
                   Ask your question
                 </p>
                 <h1 className="mt-2 text-4xl font-bold tracking-tight text-left text-gray-900 sm:text-5xl">
-                  Get expert guidance for life’s challenges
+                  Get Mehran's guidance for life’s challenges
                 </h1>
               </div>
             </div>
           </div>
           <div className="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
             <Image
-              alt="Expert guidance illustration"
+              alt="Mehran's guidance illustration"
               src="https://i.ibb.co/KmF6HyC/tanja-cotoaga-oj-LZ1-Zfghlg-unsplash-1.jpg"
               width={720}
               height={720}
@@ -118,7 +118,7 @@ export default function AskQuestionPage() {
             <div className="lg:pr-4">
               <div className="max-w-xl text-gray-700 lg:max-w-lg">
                 <p>
-                  Get personalized answers from a trusted expert. Whether you're
+                  Get personalized answers from Mehran Dadbeh. Whether you're
                   battling intrusive thoughts or navigating complex
                   relationships, we’re here to help you find clarity.
                 </p>
@@ -136,19 +136,7 @@ export default function AskQuestionPage() {
                       payment options.
                     </span>
                   </li>
-                  <li className="flex gap-x-3">
-                    <LockClosedIcon
-                      aria-hidden="true"
-                      className="mt-1 size-5 flex-none text-blue-500"
-                    />
-                    <span>
-                      <strong className="font-semibold text-gray-900">
-                        Privacy guaranteed.
-                      </strong>{" "}
-                      Your concerns are handled with utmost confidentiality and
-                      care.
-                    </span>
-                  </li>
+
                   <li className="flex gap-x-3">
                     <ServerIcon
                       aria-hidden="true"
@@ -156,10 +144,10 @@ export default function AskQuestionPage() {
                     />
                     <span>
                       <strong className="font-semibold text-gray-900">
-                        Expert advice.
+                        Expert (Mehran's) advice.
                       </strong>{" "}
-                      Receive detailed answers from a professional with
-                      experience in mental health and relationships.
+                      Receive detailed answers from Mehran Dadbeh with
+                      experience in mental health, relationships, OCD, HOCD (it's subsets) and intrusive thoughts.
                     </span>
                   </li>
                 </ul>

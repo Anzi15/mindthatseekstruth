@@ -8,7 +8,7 @@ const BookSection = () => {
     <section className="flex flex-col justify-center items-center py-10">
      <h2 className="md:text-4xl text-2xl font-bold uppercase my-4">Our books</h2>
 
-     <div className="flex justify-center items-center m-auto py-10 gap-4 flex-col md:flex-row">
+     <a href='/books/me-my-psyche-and-i' className="flex justify-center items-center m-auto py-10 gap-4 flex-col md:flex-row">
         <div className="md:w-1/3 p-8 md:0">
         <h3 className="title text-2xl font-semibold py-2">
             Me, My Psyche and I
@@ -20,10 +20,10 @@ const BookSection = () => {
         <div className="md:w-1/2">
         <Image src="https://i.ibb.co/mcWJfdc/smartmockups-m3ug5rw0.jpg" alt="Me, My Psyche and I" width="720" height="1080" className="rounded skeleton-loading" />
         </div>
-     </div>
+     </a>
 
 
-     <div className="flex justify-center items-center m-auto py-10 gap-4 flex-col-reverse md:flex-row-reverse">
+     <a href='/books/the-break-up-pain-handbook' className="flex justify-center items-center m-auto py-10 gap-4 flex-col-reverse md:flex-row-reverse">
         <div className="md:w-1/3 p-8 md:0">
         <h3 className="title py-2 text-2xl font-semibold">
             The Break up Pain
@@ -35,9 +35,9 @@ const BookSection = () => {
         <div className="md:w-1/2">
         <Image src="https://i.ibb.co/G9Y8RFy/mediamodifier-image-1.png" alt="Me, My Psyche and I" width="720" height="1080" className="rounded-lg skeleton-loading" />
         </div>
-     </div>
+     </a>
 
-     <div className="flex justify-center items-center m-auto py-10 gap-4 flex-col md:flex-row">
+     <a href='/books/me-my-psyche-and-i' className="flex justify-center items-center m-auto py-10 gap-4 flex-col md:flex-row">
         <div className="md:w-1/3 p-8 md:0">
         <h3 className="title text-2xl font-semibold py-2">
         Transient thoughts and Me!
@@ -49,7 +49,7 @@ const BookSection = () => {
         <div className="md:w-1/2">
         <Image src="https://i.ibb.co/VvxVgsq/mediamodifier-image.png" alt="Me, My Psyche and I" width="720" height="1080" className="skeleton-loading" />
         </div>
-     </div>
+     </a>
 
 <Link
 href="/shop"

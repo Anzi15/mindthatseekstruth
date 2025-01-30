@@ -8,7 +8,7 @@ const MindsetBookSection = () => {
     <section className="w-full flex my-10 items-center justify-between flex-col-reverse md:flex-row p-4 ">
       <div className="md:w-1/2 flex flex-col justify-center items-center gap-4">
         <h1 className="text-4xl cursor-brain">
-          Our best selling <br /> <strong>The Mindset </strong>
+          Most Recommended <br /> <strong>The Mindset </strong>
         </h1>
         <h2 className="text-lg text-center text-gray-500 px-6">
           A journey into clarity, resilience, and personal growth, offering

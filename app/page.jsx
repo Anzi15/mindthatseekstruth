@@ -10,6 +10,7 @@ import TestimonialsSection from "./sections/TestimonialsSection";
 import DoubtsSection from "./sections/DoubtsSection";
 import YoutubeLatestVideosSections from "./components/YoutubeContent";
 import ListedInMagazine from "./components/ListedInMagazine";
+import RecentBlogs from "./sections/RecentBlogs";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <ListedInMagazine/>
         <AskQuestionIntro/>
         <TestimonialsSection/>
+        <RecentBlogs/>  
         <DoubtsSection/>
       </main>
     </div>

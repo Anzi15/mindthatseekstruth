@@ -1,48 +1,47 @@
 [
-    {
-      "title": "Silver Plan",
-      "description": "Quick and focused consultation to address immediate concerns.",
-      "price": 60,
-      "duration": "30 Minutes",
-      "features": [
-        "30 minutes of personalized Skype consultation",
-        "Focused guidance for specific issues",
-        "Quick actionable advice",
-        "Professional and empathetic support",
-        "Flexible scheduling options"
-      ],
-      "buttonText": "Make an Appointment",
-      "slug": "silver"
-    },
-    {
-      "title": "Gold Plan (Most Popular)",
-      "description": "In-depth session to work through challenges and find clarity.",
-      "price": 100,
-      "duration": "1 Hour",
-      "features": [
-        "1 hour of immersive Skype consultation",
-        "Deep dive into relationship dynamics",
-        "Customized strategies for lasting solutions",
-        "Insightful emotional healing techniques",
-        "Priority scheduling and follow-up support"
-      ],
-      "buttonText": "Make an Appointment",
-      "slug": "gold"
-    },
-    {
-      "title": "Platinum Plan",
-      "description": "Comprehensive support for long-term growth and transformation.",
-      "price": 500,
-      "duration": "6 Hours",
-      "features": [
-        "6 hours of Skype consultation with Mehran",
-        "Holistic approach to  breakup recovery",
-        "Exclusive resources for personal growth",
-        "Step-by-step roadmap to achieve your goals",
-        "Ongoing support and actionable plans",
-        "Flexible session breakdown to fit your schedule"
-      ],
-      "buttonText": "Make an Appointment",
-      "slug": "platinum"
-    }
-  ]
+  {
+    "title": "Silver Plan",
+    "description": "Quick, targeted consultation to address immediate concerns.",
+    "price": 60,
+    "duration": "30 Minutes",
+    "features": [
+      "30 minutes of personalized Skype consultation",
+      "Focused guidance on specific mental health issues",
+      "Actionable advice for immediate relief",
+      "Empathetic and professional support",
+      "Flexible scheduling options"
+    ],
+    "buttonText": "Make an Appointment",
+    "slug": "silver"
+  },
+  {
+    "title": "Gold Plan (Most Popular)",
+    "description": "A comprehensive session to explore challenges and find clarity for long-term solutions.",
+    "price": 100,
+    "duration": "1 Hour",
+    "features": [
+      "1 hour of immersive Skype consultation",
+      "Deep dive into mental health challenges, including OCD and intrusive thoughts",
+      "Customized strategies for lasting emotional well-being",
+      "Insightful techniques for emotional healing",
+      "Priority scheduling and follow-up support"
+    ],
+    "buttonText": "Make an Appointment",
+    "slug": "gold"
+  },
+  {
+    "title": "Platinum Plan",
+    "description": "Extensive, holistic support for sustainable growth and emotional transformation.",
+    "price": 500,
+    "duration": "6 Hours",
+    "features": [
+      "6 hours of comprehensive Skype consultation with Mehran",
+      "Holistic approach to mental health recovery and personal growth",
+      "Exclusive resources tailored to your emotional and psychological needs",
+      "Step-by-step action plan to achieve your goals",
+      "Ongoing support with flexible session breakdown"
+    ],
+    "buttonText": "Make an Appointment",
+    "slug": "platinum"
+  }
+]

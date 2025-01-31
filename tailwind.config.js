@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 const withMT = require("@material-tailwind/html/utils/withMT");
- 
+
+const flowbite = require("flowbite-react/tailwind");
+
 module.exports = withMT({
     darkMode: ["class"],
     content: [
@@ -8,6 +10,7 @@ module.exports = withMT({
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
 	"./node_modules/react-tailwindcss-datepicker/dist/index.esm.{js,ts}",
+	flowbite.content(),
   ],
   theme: {
   	extend: {
@@ -24,5 +27,6 @@ module.exports = withMT({
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require('flowbite-typography'), flowbite.plugin(),
+  ],
 });

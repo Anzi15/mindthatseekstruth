@@ -33,14 +33,13 @@ const CartPage = () => {
 
   useEffect(() => {
     if (cartItems?.length) {
-      console.log(cartItems[0]);
       const getCartProducts = async (allProducts) => {
         const productsArr = [];
         allProducts.map((product) => {
           const quantity = product.quantity;
           const selectedVariant = product.selectedVariant;
           const id = product?.product?.id;
-          console.log(quantity);
+
           const allData = {
             data: product.product,
             quantity,
@@ -53,14 +52,14 @@ const CartPage = () => {
             },
           };
 
-          console.log(allData);
+
           productsArr.push(allData);
         });
         return productsArr;
       };
 
       getCartProducts(cartItems).then(async (products) => {
-        console.log(products);
+
         let subtotal = 0;
         const allProductsTags = [];
 
@@ -81,12 +80,11 @@ setSubTotal(subtotal);
         setProducts(products);
         setProductsLoading(false);
         if (subtotal > 1500) {
-          console.log(subtotal > 1500);
+         
           setShippingFees(0);
-          console.log(shippingFees);
-          console.log(`set the shippin fee 0`);
+          
         } else {
-          console.log(`sdfasfasfsfasf`);
+          
           setShippingFees(300);
         }
       });

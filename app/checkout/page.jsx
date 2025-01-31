@@ -69,7 +69,7 @@ const CheckoutPage = () => {
     const getProducts = async () => {
       if (source == "cart") {
         const cartItems = JSON.parse(localStorage.getItem("cart-items")) || [];
-        console.log(cartItems)
+        
         if (cartItems?.length) {
           let subtotal = 0;
           const productTags = [];
@@ -91,9 +91,7 @@ const CheckoutPage = () => {
         const slug = source;
         try {
           const productData = await getProductData(slug);
-          console.log("Product Data:", productData);
-          console.log("Variants:", productData.variants);
-          console.log("Selected Variant Index:", selectedVariantIndex);
+          
 
           setProducts([
             {
@@ -105,13 +103,6 @@ const CheckoutPage = () => {
           ]);
           setProductsLoading(false);
 
-          console.log([
-            {
-              data: productData,
-              quantity: parseInt(quantity),
-              productId: null,
-            },
-          ]);
         } catch (error) {
           router.push(`/`);
         }
@@ -132,7 +123,7 @@ const CheckoutPage = () => {
       products,
       totalAmount
     );
-    console.log(items, paypalTotal, itemTotal);
+    
     setTotal(paypalTotal);
     setItems(items);
   }, [products, subTotal, shippingFees, discountValue]);
@@ -204,7 +195,7 @@ const CheckoutPage = () => {
       });
 
       const data = await response;
-      console.log(data)
+      
       if (response.ok) {
         toast.success("Order delivered on your email!")
       } else {

@@ -34,7 +34,7 @@ export async function generateMetadata() {
 
 export default async function ProductsPage({ searchParams }) {
   let products = await getAllBooks();
-  console.log(products)
+
 
   // Handle sorting based on query parameter
   const sortParam = searchParams?.sort;

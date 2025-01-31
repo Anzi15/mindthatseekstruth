@@ -8,7 +8,7 @@ export async function POST(req) {
   try {
     // Get the Mailgun API key from headers
     const apiKey = req.headers.get('x-mailgun-api-key');
-    console.log(apiKey)
+
     
     if (!apiKey) {
       return NextResponse.json(

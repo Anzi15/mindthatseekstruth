@@ -1,8 +1,7 @@
 export function generateEbookHtml(items) {
   const date = new Date();
 
-  console.log("recieved items")
-  console.log(items)
+
 
   return `
     <div class='container' style="font-family: Arial, sans-serif; max-width: 600px; margin: 20px auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">

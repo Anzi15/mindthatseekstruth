@@ -25,7 +25,7 @@ className="w-full aspect-video"
 
       </div>
       </section>
-      <ConsultationPricing id="pricing"/>
+      <ConsultationPricing />
     </div>
   )
 }

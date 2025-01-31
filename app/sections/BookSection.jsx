@@ -14,7 +14,7 @@ const BookSection = () => {
             Me, My Psyche and I
         </h3>
         <p className="text-gray-500">
-        Dive deep into the uncharted territories of the human mind with Me, My Psyche, and I, a thought-provoking and introspective exploration of self discovery, mental health, and perso...
+        Have you ever wondered why you are built the way you are. What is it that makes you who you are? Have you ever asked yourself “ Is there more to me?”, “Is What I call my Psyche is the whole...
         </p>
         </div>
         <div className="md:w-1/2">
@@ -29,7 +29,7 @@ const BookSection = () => {
             The Break up Pain
         </h3>
         <p className="text-gray-500">
-        The Breakup Pain is a poignant and emotionally charged book that delves into the raw and often overwhelming experience of heartbreak. Through a blend of personal stories, expert advice...
+        Was I not enough for her? Is there someone else more of a man than I am? Why did she do that to me? How can I go on and be happy now? I treated her like a princess. We made pla...
         </p>
         </div>
         <div className="md:w-1/2">
@@ -43,7 +43,7 @@ const BookSection = () => {
         Transient thoughts and Me!
         </h3>
         <p className="text-gray-500">
-        a captivating journey through the fleeting and often elusive nature of human thoughts, emotions, and introspection. In this book, the author explores the transient nature of our minds and how we relate to our inner dia...
+        Almost all of us at one time or another find ourselves thinking thoughts that were never invited into our mind. These thoughts occupy our time and energy and some of them question everything we do, think, like or are. We won...
         </p>
         </div>
         <div className="md:w-1/2">

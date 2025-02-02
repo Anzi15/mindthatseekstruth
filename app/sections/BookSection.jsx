@@ -37,7 +37,7 @@ const BookSection = () => {
         </div>
      </a>
 
-     <a href='/books/me-my-psyche-and-i' className="flex justify-center items-center m-auto py-10 gap-4 flex-col md:flex-row">
+     <a href='books/me-my-psyche-and-i' className="flex justify-center items-center m-auto py-10 gap-4 flex-col md:flex-row">
         <div className="md:w-1/3 p-8 md:0">
         <h3 className="title text-2xl font-semibold py-2">
         Transient thoughts and Me!

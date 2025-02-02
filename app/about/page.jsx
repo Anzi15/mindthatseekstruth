@@ -12,7 +12,7 @@ const page = () => {
         <h2 className="md:text-3xl text-2xl font-bold uppercase">Navigating Minds, Healing Hearts, and Empowering <strong className=" font-extrabold before:bg-blue-200">Success</strong>.</h2>
 
         <p className="text-gray-700">
-        Discover a space where emotional healing meets personal growth, and professional success takes center stage. 
+        Discover a space where emotional healing meets personal growth, mental health and professional success takes center stage. 
       
         </p>
         </div>

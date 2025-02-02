@@ -5,7 +5,7 @@ import CtaBtn from "../components/CtaBtn";
 
 const MindsetBookSection = () => {
   return (
-    <section className="w-full flex my-10 items-center justify-between flex-col-reverse md:flex-row p-4 ">
+    <Link href="books/the-mindset" className="w-full flex my-10 items-center justify-between cursor-pointer flex-col-reverse md:flex-row p-4 ">
       <div className="md:w-1/2 flex flex-col justify-center items-center gap-4">
         <h1 className="text-4xl cursor-brain">
           Most Recommended <br /> <strong>The Mindset </strong>
@@ -28,7 +28,7 @@ const MindsetBookSection = () => {
           alt="Break up cure | Mehran Dadbeh"
         />
       </div>
-    </section>
+    </Link>
   );
 };
 

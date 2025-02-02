@@ -119,7 +119,7 @@ export default function AskQuestionPage() {
               <div className="max-w-xl text-gray-700 lg:max-w-lg">
                 <p>
                   Get personalized answers from Mehran Dadbeh. Whether you're
-                  battling intrusive thoughts or navigating complex
+                  battling intrusive thoughts or navigating though a complex
                   relationships, we’re here to help you find clarity.
                 </p>
                 <ul role="list" className="mt-8 space-y-8 text-gray-600">
@@ -144,10 +144,10 @@ export default function AskQuestionPage() {
                     />
                     <span>
                       <strong className="font-semibold text-gray-900">
-                        Expert (Mehran's) advice.
+                        Mehran's advice.
                       </strong>{" "}
                       Receive detailed answers from Mehran Dadbeh with
-                      experience in mental health, relationships, OCD, HOCD (it's subsets) and intrusive thoughts.
+                      experience in mental health, relationships, OCD, OCD subsets (HOCD) and intrusive thoughts.
                     </span>
                   </li>
                 </ul>
@@ -171,10 +171,14 @@ export default function AskQuestionPage() {
       <section className="w-full justify-center items-center">
         <div className="my-4">
           <h2 className="md:text-4xl text-2xl font-bold uppercase  text-center">
-            Empty your <strong className="before:bg-blue-400">mind</strong>
+            Ask Mehran to Empty your <strong className="before:bg-blue-400">heart</strong>
           </h2>
           <p className="text-center text-xl    text-gray-500">
-            Feel free to ask me anything
+            Feel free to ask mehran anything, and everything. 
+          </p>
+          
+          <p className="text-center text-xl    text-gray-500">
+            $25 /  question 
           </p>
 
           <form
@@ -219,7 +223,7 @@ export default function AskQuestionPage() {
               loading={isSubmissionLoading}
               type="submit"
             >
-              Clear your mind for $25
+              Submit your question
               <MdOutlineKeyboardArrowRight className="group-hover:translate-x-2 transition-all duration-200" />
             </Button>
             {shouldAskToPay && (

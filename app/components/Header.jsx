@@ -8,12 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SearchBar from "./SearchBar.jsx";
 
-const links = [
-  {
-    id: 1,
-    name: "Home",
-    href: "/",
-  },
+const links = [ 
   {
     id: 2,
     name: "Books",
@@ -24,15 +19,25 @@ const links = [
     name: "About Us",
     href: "/about",
   },
-  {
-    id: 4,
-    name: "Counseling",
-    href: "/consultation",
-  },
+  // {
+  //   id: 4,
+  //   name: "Counseling",
+  //   href: "/consultation",
+  // },
   {
     id: 5,
     name: "Support Channel",
     href: "/support",
+  },
+  {
+    id: 1,
+    name: "Ask Question",
+    href: "/ask-question",
+  },
+  {
+    id: 6,
+    name: "Skype me now",
+    href: "/ask-question",
   },
 ];
 
@@ -54,7 +59,7 @@ export default function Header({children}) {
         /> 
         </Link>
       <Navbar links={links} />
-      <div className="flex justify-center items-center gap-4 ml-auto">
+      <div className="flex justify-center items-center gap-4 ml-auto w-[13rem]">
       <SearchBar type="meow" />
         <CartButton />
         <HamburgerButton onClick={() => setIsMobileOpen(!isMobileOpen)} />

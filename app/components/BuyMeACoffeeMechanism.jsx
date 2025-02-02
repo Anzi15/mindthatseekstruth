@@ -20,7 +20,7 @@ const BuyMeACoffeeMechanism = () => {
       quantity: numberOfCoffee,
       unit_amount: {
         currency_code: "USD",
-        value: 10,
+        value: 1,
       },
     },
   ]
@@ -55,7 +55,7 @@ const BuyMeACoffeeMechanism = () => {
       <div className="border-[#004aad] border-[1px] rounded-lg py-3 sm:text-2xl text-xl w-full px-2 md:px-3 bg-[#004bad25] items-center flex justify-center m-auto ">
         <div className="flex md:gap-4 gap-2 items-center">
         Support <span className="md:text-3xl text-2xl text-gray-700 px-4 flex items-center">x</span>
-          {[1, 3, 5].map((number) => {
+          {[50, 100, 500].map((number) => {
             return (
               <div
                 onClick={() => {
@@ -65,15 +65,16 @@ const BuyMeACoffeeMechanism = () => {
                   numberOfCoffee == number
                     ? "bg-[#004aad] text-white "
                     : "bg-[#FFFFFF]"
-                }  border-[#6cacff] cursor-pointer border-[1px]  w-[14%] flex items-center transition-all duration-500 justify-center text-xl md:text-2xl `}
+                }  border-[#6cacff] cursor-pointer border-[1px]  w-[14%] flex items-center transition-all duration-500 justify-center text-lg md:text-2xl `}
                 key={number}
               >
-                {number}
+                ${number}
               </div>
             );
           })}
 
           <div className="flex sm:w-[25%] w-[35%] aspect-square max-w-[4rem]">
+            
             <input
               type="number"
               className="h-full   md:p-0 text-xl text-center rounded-lg w-full"

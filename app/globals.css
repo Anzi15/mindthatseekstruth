@@ -31,20 +31,21 @@ body {
 
 strong {
   position: relative;
+  font-weight: 800;
 }
 
 strong::before {
   /* Highlight color */
-  background-color: #F7FE72;
+  /* background-color: #F7FE72; */
 
-  content: "";
+  /* content: "";
   position: absolute;
   width: calc(100% + 4px);
   height: 60%;
   left: -2px;
   bottom: 0;
   z-index: -1;
-  transform: rotate(-2deg);
+  transform: rotate(-2deg); */
 }
 
 .skeleton-loading{

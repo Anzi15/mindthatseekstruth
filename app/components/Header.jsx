@@ -37,7 +37,7 @@ const links = [
   {
     id: 6,
     name: "Skype me now",
-    href: "/ask-question",
+    href: "/consultation",
   },
 ];
 

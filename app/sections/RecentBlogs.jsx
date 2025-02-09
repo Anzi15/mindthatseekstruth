@@ -9,7 +9,7 @@ const RecentBlogs = () => {
 <section className='flex justify-center flex-col items-center'>
 <h2 className="md:text-4xl text-2xl font-bold uppercase my-10 text-center">Latest blogs</h2>
 
-<div className='flex p-4 gap-4'>
+<div className='flex p-4 gap-4 flex-wrap'>
     {
         data.slice(0,4).map((blogData, index)=>{
         return(

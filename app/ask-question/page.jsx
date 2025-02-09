@@ -45,7 +45,7 @@ export default function AskQuestionPage() {
    
   };
 
-  const handlePostSubmit = (e) => {
+  const handlePostSubmit = async (e) => {
     e.preventDefault();
     const data = {
       customer: {
@@ -59,6 +59,18 @@ export default function AskQuestionPage() {
     try {
       const task = addDoc(collection(db, "premium-questions"),data);
       toast.success("Your message is received, you will get a reply on your email.")
+      const response = await fetch('/api/send-email', {
+                 method: 'POST',
+                 headers: {
+                   'Content-Type': 'application/json',
+                   "x-mailgun-api-key": process.env.NEXT_PUBLIC_MAILGUN_API_KEY
+                 },
+                 body: JSON.stringify({
+                   "recipient": "Md007m@gmail.com",
+                   "subject": `A new paid question, Mehran!`,
+                   "content": "Hello Mehran,\n\nA new question has been submitted and is awaiting your response.\n\nCustomer Details:\n- Name: {{customer.name}}\n- Email: {{customer.email}}\n- Gender: {{customer.gender}}\n\nQuestion:\n\"{{question}}\"\n\n\n\nPlease review and respond as soon as possible.\n\nBest,\nYour Team",
+                 }),
+               });
     } catch (error) {
       
     }

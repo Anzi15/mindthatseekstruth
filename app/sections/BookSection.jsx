@@ -13,7 +13,7 @@ const BookSection = () => {
         <h3 className="title text-2xl font-semibold py-2">
             Me, My Psyche and I
         </h3>
-        <p className="text-gray-500">
+        <p className="text-gray-500 text-wrap">
         Have you ever wondered why you are built the way you are. What is it that makes you who you are? Have you ever asked yourself “ Is there more to me?”, “Is What I call my Psyche is the whole...
         </p>
         </div>

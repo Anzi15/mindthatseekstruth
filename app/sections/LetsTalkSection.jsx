@@ -8,7 +8,10 @@ const LetsTalkSection = () => {
     <section className="w-screen py-4 my-8">
         <div className="text-center p-8 w-full">
 
-        <h2 className="md:text-4xl text-2xl font-bold uppercase my-4">Let's have a discussion about <strong className="before:bg-pink-400">You</strong></h2>
+        <h2 className='font-extrabold text-3xl uppercase'>
+          OCD, OCD Sub sets, HOCD Intrusive thoughts
+        </h2>
+        <h2 className="md:text-2xl text-lg text-gray-600 font-bold uppercase my-4">Let's have a discussion about <strong className="before:bg-pink-400">You</strong></h2>
 
         <Link href="/consultation" className="text-[#2563EB] hover:text-[#0849d6]  flex gap-2 items-center justify-center font-semibold">
             Learn more about skype consultation
@@ -20,7 +23,7 @@ const LetsTalkSection = () => {
   <Card
     image="https://i.ibb.co/NY8mrc3/c-HJpdm-F0-ZS9sci9pb-WFn-ZXMvd2-Vic2l0-ZS8y-MDIz-LTA5-L3-Jhd3-Bpe-GVsb2-Zma-WNl-MTBfc-Ghvd-G9fb2-Zf.webp"
     title="Feeling Lost?"
-    description="Receive personalized support from experienced professionals who understand your challenges and are dedicated to helping you overcome them."
+    description="Receive personalized support from Mehran Dadbeh who understand your challenges and are dedicated to helping you overcome them."
     className="w-full"
   />
   <Card

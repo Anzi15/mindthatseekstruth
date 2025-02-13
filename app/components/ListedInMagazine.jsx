@@ -6,7 +6,7 @@ const ListedInMagazine = () => {
   return (
     <section className='p-4'>
       <h3 className='md:text-4xl text-center text-2xl font-bold uppercase my-10'>
-      Hailee’s interview with 
+      Hailee Walker's interview on Heartbreak with 
         <strong className='className="before:bg-pink-500"'>
         ‎ Mehran Dadbeh ‎ 
         </strong>
@@ -15,6 +15,9 @@ const ListedInMagazine = () => {
       <div className='flex md:flex-row flex-col items-center'>
 
     <div className='md:w-1/2 p-4'>
+    <h3 className='text-2xl font-bold'>
+      Hailee Walker is a relationship counselor who write articles for the "The Big Smoke"
+    </h3>
       <p className='text-gray-800 py-4 text-lg'>
         <b>
         Hailee:
@@ -32,12 +35,15 @@ life has lot more to offer than you can imagine let alone one
 partner who does not want you! "
       </p>
 
-      <Link href="/hailees-interview-with-mehran-dadbeh" className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-full transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg my-9">
+<div className='py-10'>
+
+      <Link href="/hailees-interview-with-mehran-dadbeh" className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-full transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg">
   Read whole interview
 </Link>
+</div>
     </div>  
     <div className='md:w-1/2 p-4'>
-        <Image src='/red-shirt-mehran.webp' width='720' height='720' className='w-full' alt='break up cure | ' />
+        <Image src='/red-shirt-mehran.webp' width='720' height='720' className='w-full rounded-lg' alt='break up cure | ' />
     </div>
       </div>
     </section>

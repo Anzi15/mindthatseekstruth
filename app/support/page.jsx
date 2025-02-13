@@ -27,7 +27,7 @@ import BuyMeACoffeeMechanism from '../components/BuyMeACoffeeMechanism'
                 <Image src='https://plus.unsplash.com/premium_photo-1681488007344-c75b0cf8b0cd?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' width='720' height='720' className='w-full absolute inset-0 opacity-10 select-none z-0' alt='HOCD OCD AND ITS SUB SETS' draggable={false}/>
                 <div className='p-6'>
 
-                <h1 className='z-20 text-start text-3xl text-white font-bold '>OCD & OCD Sub sets (HOCD)</h1>
+                <h1 className='z-20 text-start text-3xl text-white font-bold '>OCD & OCD Subsets (HOCD)</h1>
                 <p className='text-white'>Free resources to help you with HOCD, OCD & it's subsets.</p>
                 </div>
                 </div>

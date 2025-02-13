@@ -57,20 +57,19 @@ export default function AskQuestionPage() {
       status: "unanswered"
     };
     try {
-      const task = addDoc(collection(db, "premium-questions"),data);
-      toast.success("Your message is received, you will get a reply on your email.")
       const response = await fetch('/api/send-email', {
-                 method: 'POST',
-                 headers: {
-                   'Content-Type': 'application/json',
-                   "x-mailgun-api-key": process.env.NEXT_PUBLIC_MAILGUN_API_KEY
-                 },
-                 body: JSON.stringify({
-                   "recipient": "Md007m@gmail.com",
-                   "subject": `A new paid question, Mehran!`,
-                   "content": "Hello Mehran,\n\nA new question has been submitted and is awaiting your response.\n\nCustomer Details:\n- Name: {{customer.name}}\n- Email: {{customer.email}}\n- Gender: {{customer.gender}}\n\nQuestion:\n\"{{question}}\"\n\n\n\nPlease review and respond as soon as possible.\n\nBest,\nYour Team",
-                 }),
-               });
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          "x-mailgun-api-key": process.env.NEXT_PUBLIC_MAILGUN_API_KEY
+        },
+        body: JSON.stringify({
+          "recipient": "Md007m@gmail.com",
+          "subject": `A new paid question, Mehran!`,
+          "content": `Hello Mehran,\n\nA new question has been submitted and is awaiting your response.\n\nCustomer Details:\n- Name: ${customer.name}\n- Email: ${customer.email}\n- Gender: ${customer.gender}\n\nQuestion:\n\"${question}\"\n\n\n\nPlease review and respond as soon as possible.\n\nBest,\nYour Team`,
+        }),
+      });
+      toast.success("Your message is received, you will get a reply on your email.")
     } catch (error) {
       
     }
@@ -144,7 +143,7 @@ export default function AskQuestionPage() {
                       <strong className="font-semibold text-gray-900">
                         Easy and secure.
                       </strong>{" "}
-                      Submit your question quickly and confidently with secure
+                      Submit your question quickly with secure
                       payment options.
                     </span>
                   </li>
@@ -172,7 +171,7 @@ export default function AskQuestionPage() {
                 </h2>
                 <p className="mt-6">
                   Submit your question, complete the secure payment, and receive
-                  a detailed response from Mehran Dadbeh. Every step is designed
+                  a detailed response from Mehran Dadbeh. (Mehran Will Send you a personalized voice recording directly to your mail) Every step is designed
                   to provide clarity and assurance.
                 </p>
               </div>

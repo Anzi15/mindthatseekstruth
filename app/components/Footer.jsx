@@ -67,7 +67,7 @@ const Footer = () => {
         <hr className="my-6 border-gray-700" />
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-400 sm:text-center">
-            © 2023 <a href="/" className="hover:underline">Mind That Seeks Truth™</a>. All Rights Reserved.
+            © {new Date().getFullYear()} <a href="/" className="hover:underline">Mind That Seeks Truth™</a>. All Rights Reserved.
           </span>
           <div className="flex mt-4 sm:justify-center sm:mt-0">
             {followUsLinks.map((link, index) => (

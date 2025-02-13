@@ -18,7 +18,7 @@ const BookSection = () => {
         </p>
         </div>
         <div className="md:w-1/2">
-        <Image src="https://i.ibb.co/mcWJfdc/smartmockups-m3ug5rw0.jpg" alt="Me, My Psyche and I" width="720" height="1080" className="rounded skeleton-loading" />
+        <Image src="https://i.ibb.co/PfBXdPZ/sdsdsds.pnghttps://i.ibb.co/PfBXdPZ/sdsdsds.png" alt="Me, My Psyche and I" width="720" height="1080" className="rounded skeleton-loading" />
         </div>
      </a>
 

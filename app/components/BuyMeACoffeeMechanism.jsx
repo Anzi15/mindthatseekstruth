@@ -8,7 +8,7 @@ import { generateCoffeeHtml } from "./EmailEbookSender";
 import { toast } from "react-toastify";
 
 const BuyMeACoffeeMechanism = () => {
-  const [numberOfCoffee, setNumberOfCoffee] = useState(1);
+  const [numberOfCoffee, setNumberOfCoffee] = useState(50);
   const [name, setName] = useState("");
   const [yourMsg, setYourMsg] = useState("");
   const [isMonthly, setIsMonthly] = useState(false);
@@ -75,14 +75,15 @@ const BuyMeACoffeeMechanism = () => {
 
           <div className="flex sm:w-[25%] w-[35%] aspect-square max-w-[4rem]">
             
-            <input
-              type="number"
-              className="h-full   md:p-0 text-xl text-center rounded-lg w-full"
-              value={numberOfCoffee}
-              onInput={(e) => {
-                setNumberOfCoffee(e.target.value);
-              }}
-            />
+          <input
+      type="text"
+      className="h-full md:p-0 text-xl text-center rounded-lg w-full"
+      value={numberOfCoffee ? `$${numberOfCoffee}` : ""}
+      onChange={(e) => {
+        const rawValue = e.target.value.replace(/[^0-9]/g, ""); // Strip non-numeric characters
+        setNumberOfCoffee(rawValue);
+      }}
+    />
           </div>
         </div>
       </div>

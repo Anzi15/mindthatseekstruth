@@ -9,11 +9,11 @@ const LetsTalkSection = () => {
         <div className="text-center p-8 w-full">
 
         <h2 className='font-extrabold text-3xl uppercase'>
-          OCD, OCD Sub sets, HOCD Intrusive thoughts
+          OCD, OCD Subsets, HOCD Intrusive thoughts
         </h2>
         <h2 className="md:text-2xl text-lg text-gray-600 font-bold uppercase my-4">Let's have a discussion about <strong className="before:bg-pink-400">You</strong></h2>
 
-        <Link href="/consultation" className="text-[#2563EB] hover:text-[#0849d6]  flex gap-2 items-center justify-center font-semibold">
+        <Link href="/consultation" className="text-[#2563EB] hover:text-[#0849d6]  flex gap-2 items-center justify-center font-semibold font-body">
             Learn more about skype consultation
             <FaAngleRight />
         </Link>

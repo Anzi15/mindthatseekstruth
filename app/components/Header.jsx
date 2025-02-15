@@ -7,6 +7,7 @@ import Navbar from "./NavBar.jsx";
 import Image from "next/image";
 import Link from "next/link";
 import SearchBar from "./SearchBar.jsx";
+import { FaArrowRight } from "react-icons/fa";
 
 const links = [ 
   {
@@ -46,6 +47,13 @@ export default function Header({children}) {
   return (
     <>
     {children}
+    <a href="/consultation">
+
+    <div className="w-full bg-blue-700 p-2 text-center text-white group hover:bg-blue-800 transition-all hover:text-[1.05rem] text-md flex gap-2 hover:gap-4 items-center justify-center">
+      Learn more about skype consultation
+      <FaArrowRight />
+    </div>
+    </a>
     <header className="max-w-[1440px] mx-auto pt-7 pb-3 flex items-center gap-[103px] h-[84px] min-[1440px]:h-fit px-4 md:px-8 min-[1440px]:px-28 my-4 justice ">
       <Link href={"/"}>
     <Image

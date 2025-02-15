@@ -42,7 +42,7 @@ const page = () => {
         </div>
 
           <div className="flex h-full  md:w-1/2 items-end mt-auto">
-                  <Image src='/mehran simple.webp' width='720' height='720' className='w-full select-none'  alt='Mehran Dadbeh | HOCD / OCD Consulation / Break up cure' priority={true} draggable="false"  />
+                  <Image src='/mehran-siting-on-hand.webp' width='720' height='720' className='w-full select-none'  alt='Mehran Dadbeh | HOCD / OCD Consulation / Break up cure' priority={true} draggable="false"  />
                 </div>
 
       </section>

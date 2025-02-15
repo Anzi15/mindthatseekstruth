@@ -34,8 +34,11 @@ const HeroSection = () => {
       </div> */}
       <div className="flex md:w-1/2 flex-col px-4 gap-4 md:py-0 py-6">
         <div className='bg-cyan-600 text-md text-left rounded-md px-4 py-2 w-fit text-white'>
-        HOCD/OCD Specialist & Relationship Consultant
+        Break ups, Relationships, OCD & HOCD Are Specialty Topics of Discussion Here
         </div>
+        <h3>
+          Mehran Dadbeh
+        </h3>
         <h1 className='md:text-5xl text-3xl font-black text-left'>
         Guiding You Toward Clarity, Confidence, and Better Relationships
         </h1>

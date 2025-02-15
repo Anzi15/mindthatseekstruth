@@ -11,6 +11,9 @@ const page = () => {
             </strong>
             
           </h3>
+          <h3 className='text-2xl font-bold'>
+      Hailee Walker is a relationship counselor who write articles for the "The Big Smoke" of Australia.
+    </h3>
           <div className='flex md:flex-row flex-col items-center'>
     
         <div className='p-4'>

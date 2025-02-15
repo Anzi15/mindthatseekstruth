@@ -16,7 +16,7 @@ const ListedInMagazine = () => {
 
     <div className='md:w-1/2 p-4'>
     <h3 className='text-2xl font-bold'>
-      Hailee Walker is a relationship counselor who write articles for the "The Big Smoke"
+      Hailee Walker is a relationship counselor who write articles for the "The Big Smoke" of Australia.
     </h3>
       <p className='text-gray-800 py-4 text-lg'>
         <b>

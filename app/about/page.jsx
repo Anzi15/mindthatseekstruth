@@ -3,18 +3,33 @@
  import OurNumbersSection from '../sections/OurNumbersSection'
  import TestimonialsSection from '../sections/TestimonialsSection'
  import FAQs from '../components/FAQs'
+import Link from 'next/link'
+import { FaArrowRight } from 'react-icons/fa'
 
 const page = () => {
   return (
     <main>
       <section className="flex w-full md:flex-row flex-col items-center p-6 mg:gap-0 gap-20 justify-between">
         <div className="md:w-1/2 flex flex-col gap-4">
+        <h3 className='text-2xl italic'>
+          Mehran dadbeh
+        </h3>
         <h2 className="md:text-3xl text-2xl font-bold uppercase">Navigating Minds, Healing Hearts, and Empowering <strong className=" font-extrabold before:bg-blue-200">Success</strong>.</h2>
 
         <p className="text-gray-700">
         Discover a space where emotional healing meets personal growth, mental health and professional success takes center stage. 
       
         </p>
+        <Link href={"#about-mehran"} className='bg-blue-600 text-white py-3 px-4 rounded-md flex gap-2 hover:gap-4 transition-all items-center justify-center'>
+        More about mehran
+
+            <FaArrowRight />
+          </Link>
+          <Link href={"/consultation"} className=' text-blue-600 py-3 px-4 rounded-md border-2 border-blue-600 flex gap-2 hover:gap-4 transition-all items-center justify-center'>
+            Talk to mehran directly
+
+            <FaArrowRight />
+          </Link>
         </div>
         <div className="md:w-1/2">
             <Image src='/mehran dadbeh about us.gif' width='720' height='720' className='w-full' alt='Mehran Dadbeh | Break up author' priority={true} placeholder="blur" blurDataURL="https:img.freepik.com/free-vector/white-blurred-background_1034-249.jpg" />
@@ -29,7 +44,7 @@ const page = () => {
       <TestimonialsSection/> 
 
       <section className='flex w-full md:py-28 py-10 flex-col items-center p-6 mg:gap-0 gap-20 justify-between m-auto max-w-7xl'>
-      <h2 className="md:text-3xl text-2xl font-bold uppercase">About <strong className=" font-extrabold before:bg-red-200">Mehran</strong>.</h2>
+      <h2 className="md:text-3xl text-2xl font-bold uppercase">About <strong className=" font-extrabold before:bg-red-200" id='about-mehran'>Mehran</strong>.</h2>
       
       
       <div className='flex w-full md:flex-row flex-col md:p-6 gap-6 text-lg '>

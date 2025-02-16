@@ -130,8 +130,8 @@ export default function AskQuestionPage() {
               <div className="max-w-xl text-gray-700 lg:max-w-lg">
                 <p>
                   Get personalized answers from Mehran Dadbeh. Whether you're
-                  battling intrusive thoughts or navigating though a complex
-                  relationships, we’re here to help you find clarity.
+                  battling intrusive thoughts or navigating through a complex
+                  relationships, and how to move on from break up, Mehran is here to help you find clarity.
                 </p>
                 <ul role="list" className="mt-8 space-y-8 text-gray-600">
                   <li className="flex gap-x-3">
@@ -158,7 +158,7 @@ export default function AskQuestionPage() {
                         Mehran's advice.
                       </strong>{" "}
                       Receive detailed answers from Mehran Dadbeh with
-                      experience in mental health, relationships, OCD, OCD subsets (HOCD) and intrusive thoughts.
+                      vast experience in mental health, relationships (how to move on from break ups), OCD, OCD subsets (HOCD) and intrusive thoughts.
                     </span>
                   </li>
                 </ul>
@@ -172,7 +172,7 @@ export default function AskQuestionPage() {
                 <p className="mt-6">
                   Submit your question, complete the secure payment, and receive
                   a detailed response from Mehran Dadbeh. (Mehran Will Send you a personalized voice recording directly to your mail) Every step is designed
-                  to provide clarity and assurance.
+                  to provide clarity and guidance.
                 </p>
               </div>
             </div>

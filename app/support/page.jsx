@@ -35,7 +35,7 @@ import BuyMeACoffeeMechanism from '../components/BuyMeACoffeeMechanism'
                 <Image src='https://images.unsplash.com/photo-1675552560875-59a0f0a8ec59?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' width='720' height='720' className='w-full absolute inset-0 aspect-square object-cover opacity-10 select-none z-0' alt='Relationships and break ups aspect-square object-cover' draggable={false}/>
                 <div className='p-6'>
 
-                <h1 className='z-20 text-start text-3xl text-white font-bold '>Relationships and break ups</h1>
+                <h1 className='z-20 text-start text-3xl text-white font-bold '>Break ups & Relationships</h1>
                 <p className='text-white'>Has always helped with dealing with the pains of break ups.</p>
                 </div>
                 </div>

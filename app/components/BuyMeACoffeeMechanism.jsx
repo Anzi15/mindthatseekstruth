@@ -13,7 +13,7 @@ const BuyMeACoffeeMechanism = () => {
   const [yourMsg, setYourMsg] = useState("");
   const [isMonthly, setIsMonthly] = useState(false);
   const [shouldAskToPay, setShouldAskToPay] = useState(false)
-
+  const [customCoffeeInput, setCustomCoffeeInput] = useState("")
   const items = [
     {
       name: "Coffee",
@@ -76,14 +76,22 @@ const BuyMeACoffeeMechanism = () => {
           <div className="flex sm:w-[25%] w-[35%] aspect-square max-w-[4rem]">
             
           <input
-      type="text"
-      className="h-full md:p-0 text-xl text-center rounded-lg w-full"
-      value={numberOfCoffee ? `$${numberOfCoffee}` : ""}
-      onChange={(e) => {
-        const rawValue = e.target.value.replace(/[^0-9]/g, ""); // Strip non-numeric characters
-        setNumberOfCoffee(rawValue);
-      }}
-    />
+  type="text"
+  className="h-full md:p-0 text-xl text-center rounded-lg w-full"
+  value={customCoffeeInput} // Keeps input field separate from numberOfCoffee
+  placeholder="$??"
+  onChange={(e) => {
+    const rawValue = e.target.value.replace(/[^0-9]/g, ""); // Allow only numbers
+    setCustomCoffeeInput(rawValue);
+  }}
+  onBlur={() => {
+    if (customCoffeeInput) {
+      setNumberOfCoffee(Number(customCoffeeInput)); // Update numberOfCoffee
+    }
+     // Clear input field
+  }}
+/>
+
           </div>
         </div>
       </div>

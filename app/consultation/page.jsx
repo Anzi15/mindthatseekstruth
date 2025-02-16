@@ -9,9 +9,13 @@ const page = () => {
     <main className='w-screen relative'>
       <section className='w-full md:flex bg-blue-50 items-center justify-start md:min-h-[80vh]'>
         <div className='flex md:w-1/2 md:p-6 py-8 px-4 flex-col'>
+        <a href="#pricing">
+
+        <h4 className='text-2xl italic'>Talk to mehran anytime</h4>
+        </a>
         <h2 className='md:text-4xl text-2xl font-extrabold text-[#023047]'>
         Find Clarity, Overcome Challenges, and Strengthen Relationships
-        </h2>
+        </h2> 
 
         <div className='grid gap-3 flex-col items-start justify-start grid-cols-2 py-4 md:py-8'>
           {["HOCD and OCD Management","How to move on from your break up","Intrusive Thought Understanding Strategies","1-on-1 Guidance"].map((feature, index)=>{
@@ -28,16 +32,16 @@ const page = () => {
           })}
         </div>
         <div className='flex gap-4 '> 
-        <Link href={"#pricing"} className='bg-blue-600 text-white py-3 px-4 rounded-md flex gap-2 hover:gap-4 transition-all items-center justify-center'>
-        Pricing
+      <Link href={"#pricing"} className='bg-blue-600 text-white py-3 px-4 rounded-md flex gap-2 hover:gap-4 transition-all items-center justify-center'>
+      Pricing
 
-            <FaArrowRight />
-          </Link>
-          <Link href={"#demo"} className=' text-blue-600 py-3 px-4 rounded-md border-2 border-blue-600 flex gap-2 hover:gap-4 transition-all items-center justify-center'>
-            View demo
+          <FaArrowRight />
+        </Link>
+        <Link href={"#demo"} className=' text-blue-600 py-3 px-4 rounded-md border-2 border-blue-600 flex gap-2 hover:gap-4 transition-all items-center justify-center'>
+          View demo
 
-            <FaArrowRight />
-          </Link>
+          <FaArrowRight />
+        </Link>
         </div>
         </div>
 

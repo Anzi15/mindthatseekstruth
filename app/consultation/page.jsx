@@ -14,7 +14,7 @@ const page = () => {
         </h2>
 
         <div className='grid gap-3 flex-col items-start justify-start grid-cols-2 py-4 md:py-8'>
-          {["HOCD and OCD Management","Relationship Guidance","Intrusive Thought Understanding Strategies","1-on-1 Guidance"].map((feature, index)=>{
+          {["HOCD and OCD Management","How to move on from your break up","Intrusive Thought Understanding Strategies","1-on-1 Guidance"].map((feature, index)=>{
             return (
             <div className='flex' key={index}>
                 <div className='flex aspect-square rounded-full text-white p-2 bg-[#00b4d8] w-7 justify-center h-7 items-center'>

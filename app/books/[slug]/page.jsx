@@ -47,7 +47,7 @@ export default async function ProductDetailPage({ params }) {
             {(productData.oldSiteDesc ? productData.oldSiteDesc : productData.description)
   .split('.')
   .map((line, index) => (
-    <p key={index} className="text-gray-800 py-2">{line}</p>
+    <p key={index} className="text-gray-800 py-2">{line}.</p>
   ))}
 
           </div>

@@ -14,6 +14,9 @@ module.exports = withMT({
   ],
   theme: {
   	extend: {
+		fontFamily: {
+			dancing: "var(--font-dancing)",
+		  },
   		colors: {
   			background: 'var(--background)',
   			foreground: 'var(--foreground)',

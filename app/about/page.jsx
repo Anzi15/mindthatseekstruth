@@ -11,7 +11,7 @@ const page = () => {
     <main>
       <section className="flex w-full md:flex-row flex-col items-center p-6 mg:gap-0 gap-20 justify-between">
         <div className="md:w-1/2 flex flex-col gap-4">
-        <h3 className='text-2xl italic'>
+        <h3 className='text-5xl font-dancing italic'>
           Mehran dadbeh
         </h3>
         <h2 className="md:text-3xl text-2xl font-bold uppercase">Navigating Minds, Healing Hearts, and Empowering <strong className=" font-extrabold before:bg-blue-200">Success</strong>.</h2>

@@ -11,7 +11,7 @@ const page = () => {
         <div className='flex md:w-1/2 md:p-6 py-8 px-4 flex-col'>
         <a href="#pricing">
 
-        <h4 className='text-2xl italic'>Talk to mehran anytime</h4>
+        <h4 className='text-4xl italic font-dancing'>Talk to mehran anytime</h4>
         </a>
         <h2 className='md:text-4xl text-2xl font-extrabold text-[#023047]'>
         Find Clarity, Overcome Challenges, and Strengthen Relationships
@@ -33,7 +33,7 @@ const page = () => {
         </div>
         <div className='flex gap-4 '> 
       <Link href={"#pricing"} className='bg-blue-600 text-white py-3 px-4 rounded-md flex gap-2 hover:gap-4 transition-all items-center justify-center'>
-      Pricing
+      Book an appointment
 
           <FaArrowRight />
         </Link>

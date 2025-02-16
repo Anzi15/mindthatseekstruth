@@ -342,7 +342,7 @@ const ProductPageUi = ({parsedProduct}) => {
 
     {
       product?.sampleBook  && (
-        <a target="_blank" href={product?.sampleBook} className="flex gap-2    items-center text-blue-900">
+        <a target="_blank" href={product?.sampleBook} className="flex gap-2    items-center text-blue-900 text-xl font-semibold">
           <MdOutlineRemoveRedEye />
           View sample book
         </a>

@@ -6,8 +6,8 @@ import BuyMeACoffeeMechanism from '../components/BuyMeACoffeeMechanism'
     const page = () => {
       return (
         <section>
-            <div className='w-full bg-[#004aad] p-4 md:flex items-center'>
-                <div className='md:w-1/2'>
+            <div className='w-full bg-[#004aad]  md:flex items-center'>
+                <div className='md:w-1/2 p-6'>
                     <h2 className='md:text-5xl text-4xl font-extrabold text-white'>
                     Support Mehran Dadbeh’s Legacy of Impact
                     </h2>
@@ -18,8 +18,8 @@ import BuyMeACoffeeMechanism from '../components/BuyMeACoffeeMechanism'
                     Be Part of the Impact
                     </Link>
                 </div>
-                <div className='md:w-1/2'>
-                    <Image src='/blue-paper-mehran.webp' width='720' height='720' className='w-full select-none' alt='' draggable={false} />
+                <div className='md:w-1/2 flex justify-end items-end'>
+                    <Image src='/mehran happy.webp' width='720' height='720' className='w-full select-none' alt='' draggable={false} />
                 </div>
             </div>
             <div className='md:flex m-auto'>

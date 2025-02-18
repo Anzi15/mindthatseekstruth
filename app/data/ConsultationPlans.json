@@ -2,7 +2,7 @@
   {
     "title": "Silver Plan",
     "description": "A focused consultation to address your personal concerns and provide immediate guidance.",
-    "price": 60,
+    "price": 80,
     "duration": "30 Minutes",
     "features": [
       "30 minutes of personalized Skype consultation",
@@ -17,8 +17,8 @@
   {
     "title": "Gold Plan (Most Popular)",
     "description": "A comprehensive session designed to explore challenges and provide clarity for long-term well-being.",
-    "price": 100,
-    "duration": "1 Hour",
+    "price": 150,
+    "duration": "90 Minutes",
     "features": [
       "1 hour of immersive Skype consultation",
       "Guidance on mental health, topics of your choice, such as OCD, recovering from a break up and emotional healing",

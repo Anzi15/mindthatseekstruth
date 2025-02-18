@@ -11,7 +11,7 @@ export default function PayPalButton({ items, totalAmount, onSuccess }) {
   const itemTotal = calculateItemTotal();  // Calculate the total of items
 
   return (
-    <PayPalScriptProvider options={{ 'client-id': process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID }}>
+    <PayPalScriptProvider  options={{ 'client-id': process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID, disableFunding: "card,credit,paylater" }}>
       <PayPalButtons
         createOrder={(data, actions) => {
           return actions.order.create({

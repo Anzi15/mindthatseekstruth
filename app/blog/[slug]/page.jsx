@@ -1,28 +1,44 @@
-import React from "react";
 import data from "../../data/liveBlogs.js";
-import Image from "next/image.js";
-const getBlogData = (slug) => {
+import Image from "next/image";
+import Head from "next/head";
+import ScrollPopup from "../../components/ScrollPopup"; // Import the client component
 
+const getBlogData = (slug) => {
   const product = data.find((product) => product.id === slug);
   return product || null;
 };
 
-const page = async ({ params }) => {
+export async function generateMetadata({ params }) {
   const { slug } = params;
   const blogData = getBlogData(slug);
+
+  return {
+    title: blogData?.title ? `${blogData.title} | Mehran Dadbeh` : "Blog",
+    description: blogData?.description || "Read this blog post.",
+  };
+}
+
+const Page = ({ params }) => {
+  const { slug } = params;
+  const blogData = getBlogData(slug);
+
   return (
     <>
+      <Head>
+        <title>{blogData?.title ? `${blogData.title} | My Blog` : "Blog"}</title>
+        <meta name="description" content={blogData?.excerpt || "Read this blog post"} />
+      </Head>
+
       <Image
         src={blogData?.coverImage}
         width="720"
         height="720"
         className="w-full"
-        alt={blogData?.title }
-    />
+        alt={blogData?.title}
+      />
+
       <article className="format lg:format-lg m-auto p-4">
-        <h1 className="text-left font-extrabold text-3xl py-4">
-          {blogData?.title}
-        </h1>
+        <h1 className="text-left font-extrabold text-3xl py-4">{blogData?.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: blogData?.content }}></div>
       </article>
 
@@ -33,7 +49,7 @@ const page = async ({ params }) => {
               Seeking help for HOCD, OCD Break up, and intrusive thoughts?
             </h2>
             <p className="mb-6 font-light text-gray-500 dark:text-gray-400 md:text-lg">
-             Get guidance directly from the expert (Mehran Dadbeh)
+              Get guidance directly from the expert (Mehran Dadbeh)
             </p>
             <a
               href="/consultation"
@@ -44,8 +60,11 @@ const page = async ({ params }) => {
           </div>
         </div>
       </section>
+
+      {/* Add the ScrollPopup component here */}
+      <ScrollPopup />
     </>
   );
 };
 
-export default page;
+export default Page;
